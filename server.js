@@ -9,6 +9,8 @@ const homeRoutes = require('./routes/home')
 const authRoutes = require('./routes/auth')
 const gamesRoutes = require('./routes/games')
 require('dotenv').config({path: './config/.env'})
+const cors = require('cors')
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 //Passport config
 require('./config/passport')(passport)
@@ -17,6 +19,7 @@ require('./config/passport')(passport)
 connectDB()
 
 //General Middleware
+app.use(cors())
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.json())
