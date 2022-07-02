@@ -13,4 +13,11 @@ module.exports = {
         res.redirect('/dashboard');
       }
     },
+    checkAuth: function(req, res, next){
+      if(req.isAuthenticated()){
+        res.redirect('/games')
+      }else{
+        return next()
+      }
+    }
   }

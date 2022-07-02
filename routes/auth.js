@@ -1,10 +1,11 @@
 const express = require('express')
 const passport = require('passport')
 const config = require('../config/config')
+const {checkAuth} = require('../middleware/auth')
 const router = express.Router()
 
 
-router.get('/discord', passport.authenticate('discord'), (req,res)=>{
+router.get('/discord', checkAuth, passport.authenticate('discord'), (req,res)=>{
     console.log(req.user)
     res.send(200)
 });
