@@ -2,6 +2,15 @@ body{
     background: #0A0908;
     color: #94DDBC;
 }
+header{
+    background-color: #542062;
+    padding: 20px;
+    text-align: right;
+}
+.username{
+    font-size: 20px;
+    font-weight: bold;
+}
 
 .wrapper{
     background: transparent;
@@ -11,6 +20,19 @@ body{
 .mainTitle{
     text-align: center;
     font-size: 40px;
+}
+h1{
+    font-size: 36px;
+    font-weight: bold;
+}
+.main section{
+    width: 50%;
+    padding: 50px;
+}
+.gameDescription{
+    margin-top: 75px;
+    font-size: 25px;
+    line-height: 37px;
 }
 .main {
     padding: 100px;

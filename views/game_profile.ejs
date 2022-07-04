@@ -8,18 +8,30 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome <%= name %>, let's add some games to your list! </h1>
-
-    <form action="/games/search" method="GET">
-        <input type="text" name="gameName">
-        <button type="submit">Search</button>
-    </form>
-    <ul class="games">
-            <li class="gameCard">
-                <a href="/games/profile/<%=game.name%>"><span class="gameTitle" data-id="<%=game.id%>"><%= game.name %></span></a>
-                <img class="gameImg" src="<%= game.background_image %>" alt="">
-            </li>
-    </ul>
+    <header>
+        <span class="username"><%= name %></span>
+    </header>
+    <section class="main">
+        <section class="gameMain">
+            <h1><%= game.name %></h1>
+            <img class="gameImg" src="<%= game.background_image %>" alt="">  
+            <section>
+                <h2>Find friends for this game: </h2>
+                <form action="/games/search" method="GET">
+                    <input type="text" name="gameName">
+                    <button type="submit">Search</button>
+                </form>
+            </section> 
+        </section>
+        <section>
+            <p class="gameDescription"><%=game.description_raw%></p>
+        </section>
+        
+    </section>
+    
+    
+   
+    
     
 </body>
 </html>

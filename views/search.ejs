@@ -17,7 +17,7 @@
     <ul class="games">
         <% for(let i = 0; i < games.length ; i++) { %>
             <li class="gameCard">
-                <a href="/games/profile/<%=games[i].name%>"><span class="gameTitle" data-id="<%=games[i].id%>"><%= games[i].name %></span></a>
+                <a href="/games/profile/<%=games[i].slug%>"><span class="gameTitle" data-id="<%=games[i].id%>"><%= games[i].name %></span></a>
                 <img class="gameImg" src="<%= games[i].background_image %>" alt="">
             </li>
         <%}%>
