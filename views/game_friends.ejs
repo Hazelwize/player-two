@@ -16,32 +16,23 @@
             <h1><%= game.name %></h1>
             <img class="gameImg" src="<%= game.background_image %>" alt="">  
             <section>
-                <h2>Join the list to find friends: </h2>
-                <form action="/games/addGame" method="POST">
-                    <label>Hours Played:
-                        <input type="text" name="hoursPlayed">
-                    </label>
-                    <input type="hidden" name="slug" value="<%=game.slug%>">
-                    <button type="submit">Add Game</button>
-                </form>
-            </section> 
+                <h3>Find your PlayerToo:</h3>
+                <ul class="users">
+                    <% users.forEach(e => { %>
+                        <li>
+                            <span><%= e.username %></span>
+                        </li>
+        
+                    <%})%>
+                </ul>
+            </section>
         </section>
         <section>
             <p class="gameDescription"><%=game.description_raw%></p>
         </section>
         
     </section>
-    <section>
-        <h3>Find your PlayerToo:</h3>
-        <ul class="users">
-            <% users.forEach(e => { %>
-                <li>
-                    <span><%= e.username %></span>
-                </li>
-
-            <%})%>
-        </ul>
-    </section>
+    
     
     
    

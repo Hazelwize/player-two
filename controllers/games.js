@@ -98,8 +98,6 @@ module.exports = {
                 })
             })
             console.log(filteredUsers)
-            
-            
             res.render('game_friends.ejs', {game: filteredGames, users: filteredUsers, name: req.user.username})
         }
         catch(err){
