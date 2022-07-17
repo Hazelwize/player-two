@@ -20,7 +20,7 @@ There is still a decent ways to go. I am currently using EJS for the front-end, 
 I have deepened my understanding of authentication and React most of all. I started out by fully typing out the routes for authentication manually without passport. This let me fully appreciate all that passport does for us even though the documentation is a bit lacking. 
 
 ## Examples:
-Take a look at these couple examples that I have in my own portfolio:
+Take a look at these examples that I have in my own portfolio:
 
 **Full Stack Todo List** https://github.com/Hazelwize/todo-list
 
