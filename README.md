@@ -4,7 +4,8 @@ PlayerToo is a social platform for finding other people interested in the same m
 
 **Link to project:** This Site is not live yet
 
-![PlayerToo Logo](https://user-images.githubusercontent.com/97214996/179373125-dd7aebc9-e686-467e-8a09-6ea64c7fbae0.png)
+
+![PlayerToo-Logo](https://user-images.githubusercontent.com/97214996/180891251-d5d67224-eaf0-40f1-8339-33a1a8e4e74d.png)
 
 
 ## How It's Made:
