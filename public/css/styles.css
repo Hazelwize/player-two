@@ -1,22 +1,130 @@
-body{
-    background: #0A0908;
-    color: #94DDBC;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-header{
-    background-color: #542062;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+    box-sizing: border-box;
+    background: #003459;
+    color: #39A7FF;
+    font-family: 'Roboto Mono', monospace;
+}
+.main{
+    text-align: center;
+}
+.logo{
+    max-width: 60%;
+    
+}
+.floating { 
+    animation-name: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 100px;
+}
+ 
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+}
+.header{
     padding: 20px;
-    text-align: right;
+    border-radius: 0 0 30px 30px;
+    background: linear-gradient(#003242,#00171F);
+    box-shadow: 0 10px 20px #39A7FF;
+    
+}
+nav{
+    width: 100%;
+   
+    justify-content: center;
+}
+
+.flex{
+    display: flex;
+}
+.navList{
+    display: flex;
+    justify-content:center;
+    gap: 100px;
+    width: 100%;
+}
+.navItem{
+    display: inline-block;
+}
+.navItem>a{
+    color:#39A7FF;
+    font-size: 30px;
+    font-weight: 700;
+    text-shadow: 3px 3px 3px black;
+    text-decoration: none;
 }
 .username{
     font-size: 20px;
     font-weight: bold;
 }
+.loginSection{
+    justify-content: center;
+    padding: 5px;
+    border-radius: 25px;
+    width: 25%;
+    margin: 30px auto;
+    background: linear-gradient(#39A7FF,#772D8B);
+    
+}
 
-.wrapper{
+/* .wrapper{
     background: transparent;
     width: 1440px;
     margin: 0 auto;
-}
+} */
 .mainTitle{
     text-align: center;
     font-size: 40px;
@@ -25,45 +133,36 @@ h1{
     font-size: 36px;
     font-weight: bold;
 }
-.main section{
-    width: 50%;
-    padding: 50px;
-}
+
 .gameDescription{
     margin-top: 75px;
     font-size: 25px;
     line-height: 37px;
 }
-.main {
-    padding: 100px;
-    font-size: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    gap: 5%;
-}
-.mainInfo{
-    width: 50%;
-}
 .mainLogin{
     width: 40%;
-    background: linear-gradient(#772D8B, #542062);
-    border: 10px solid #A79AB2;
+    background: linear-gradient(#ac60c1, #542062);
+    border: 10px solid #BC96E6;
     padding: 40px;
     border-radius: 20px;
 }
 .loginButton{
-    background: #0A0908;
-    color: #94DDBC;
-    font-weight: bold;
-    display: inline-block;
-    padding: 10px 20px;
-    border: 3px solid #A79AB2;
-    border-radius: 10px; 
+    width: 100%;
+    text-align: center;
+    border-radius: 25px;
+    background: linear-gradient(#003241, #00171F);
+    text-shadow: 3px 3px 3px black;
+    color: #BC96E6;
+    font-weight: 700;
+    display: block;
+    font-size: 30px;
+    padding: 20px 50px;
+    text-decoration: none;
+  
 }
 .games{
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
     text-align: center;
     flex-wrap: wrap;
 
@@ -80,6 +179,61 @@ h1{
     margin: 50px 0px;
 }
 .gameImg{
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 5px solid #772D8B;
+    /* padding-top: 50px; */
     display: block;
+    object-fit: cover;
     max-width: 100%;
+}
+form{
+    text-align: center;
+    width: 100%;
+    margin-top: 100px;
+}
+.searchBar{
+    margin: 0 auto;
+    width: 40%;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: inset 4px 4px 4px rgba(0,0,0,.5);
+    border: none;
+}
+button{
+    margin: 0 auto;
+    width: 15%;
+    font-size: 20px;
+    padding: 10px 40px;
+    font-weight: 700;
+    color: #BC96E6;
+    text-shadow: 2px 2px 1px #542062;
+    background: linear-gradient(#ac60c1, #542062);
+    border-radius: 25px;
+    border: none;
+    transform: translateX(-50px);
+}
+.userNav{
+    margin-left:auto;
+}
+.searchCaption{
+    font-size: 30px;
+    font-weight: 700;
+}
+.preSearchSection{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.gameTitle{
+    font-size: 35px;
+    text-shadow: 2px 2px 1px rgba(255,255,255,.5);
+    color: #003459; 
+    font-weight: bold;
+}
+.titleLink{
+    text-decoration: none;
 }

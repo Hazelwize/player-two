@@ -8,16 +8,25 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome <%= name %>, let's add some games to your list! </h1>
-
+    <header class="header">
+        <nav class="flex">
+            <ul class="flex navList">
+                <li class="navItem"><a href="/user/profile">My Games</a></li>
+                <li class="navItem"><a href="/games/search">Search</a></li>                    
+            </ul>
+            <span class="userNav"><%= name %></span>
+        </nav>        
+    </header>
+    
+    
     <form action="/games/search" method="GET">
-        <input type="text" name="gameName">
-        <button type="submit">Search</button>
+        <input class="searchBar" type="text" name="gameName">
+        <button class=""type="submit">Search</button>
     </form>
     <ul class="games">
         <% for(let i = 0; i < games.length ; i++) { %>
             <li class="gameCard">
-                <a href="/games/profile/<%=games[i].slug%>"><span class="gameTitle" data-id="<%=games[i].id%>"><%= games[i].name %></span></a>
+                <a class="titleLink" href="/games/profile/<%=games[i].slug%>"><span class="gameTitle" data-id="<%=games[i].id%>"><%= games[i].name %></span></a>
                 <img class="gameImg" src="<%= games[i].background_image %>" alt="">
             </li>
         <%}%>

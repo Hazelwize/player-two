@@ -8,11 +8,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome <%= name %>, let's add some games to your list! </h1>
-
-    <form action="/games/search" method="GET">
-        <input type="text" name="gameName">
-        <button type="submit">Search</button>
+    <header class="header">
+        <nav class="flex">
+            <ul class="flex navList">
+                <li class="navItem"><a href="/user/profile">My Games</a></li>
+                <li class="navItem"><a href="/games/search">Search</a></li>                    
+            </ul>
+            <span class="userNav"><%= name %></span>
+        </nav>        
+    </header>
+    <section class="preSearchSection">
+        <h2 class="searchCaption">Add games, find friends!</h2>
+    </section>
+    
+     <form action="/games/search" method="GET">
+        <input class="searchBar" type="text" name="gameName">
+        <button class=""type="submit">Search</button>
     </form>
 
 </body>

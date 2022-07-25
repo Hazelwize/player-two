@@ -8,16 +8,14 @@ module.exports = {
     },
     searchGames: async(req,res) =>{
         try{
-            let name = req.query.gameName
-            let response = await axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWGAPIKEY}&search=${name}&search_precise=true`,{
-                headers: {'Content-Type': 'application/json'}
-            })
-            console.log(response)
+            console.log(req)
+            const name = req.query.gameName
+            const response = await axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWGAPIKEY}&search=${name}&search_precise=true`)
+            // console.log(response)
             const data = await response.data.results; 
             console.log(data);
             const filteredGames = await data.filter(e => e.rating >= 3)
             res.render('search.ejs', {games: filteredGames, name: req.user.username})
-            res.end()
         }
         catch(err){
             console.log(err)
@@ -25,12 +23,12 @@ module.exports = {
     }, 
     getGameProfile: async(req,res) =>{
         try{
-            let name = req.params.gameName
-            let response = await axios.get(`https://api.rawg.io/api/games/${name}?key=${process.env.RAWGAPIKEY}`,{
-                headers: {'Content-Type': 'application/json'}
-            })
+            console.log(req)
+            const name = req.params.gameName
             console.log(name)
-            console.log(response)
+            const response = await axios.get(`https://api.rawg.io/api/games/${name}?key=${process.env.RAWGAPIKEY}`)
+            
+            // console.log(response)
             const data = await response.data
             res.render('game_profile.ejs', {game: data, name: req.user.username})
         }
@@ -51,10 +49,8 @@ module.exports = {
     },
     getGameFriendList: async(req,res) =>{
         try{
-            let name = req.params.gameName
-            let response = await axios.get(`https://api.rawg.io/api/games/${name}?key=${process.env.RAWGAPIKEY}`,{
-                headers: {'Content-Type': 'application/json'}
-            })
+            const name = req.params.gameName
+            const response = await axios.get(`https://api.rawg.io/api/games/${name}?key=${process.env.RAWGAPIKEY}`)
             const filteredGames = await response.data
             const hours = await req.user.games.find(e=>{
                 return e.gameName == name 
