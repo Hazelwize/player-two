@@ -59,7 +59,7 @@ module.exports = {
             const users = await User.find()
             const filteredUsers = await users.filter(e=>{
                 return e.games.some(e => {
-                    return e.gameName == name && e.hoursPlayed < 1.2 * hours.hoursPlayed || e.hoursPlayed > .8 * hours.hoursPlayed
+                    return e.gameName == name && e.hoursPlayed < 1.2 * hours.hoursPlayed && e.hoursPlayed > .8 * hours.hoursPlayed
                 })
             })
             console.log(filteredUsers)
