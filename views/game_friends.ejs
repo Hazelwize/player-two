@@ -14,17 +14,18 @@
                 <li class="navItem"><a href="/user/profile">My Games</a></li>
                 <li class="navItem"><a href="/games/search">Search</a></li>                    
             </ul>
+            <img class="userNav userAvatar" src="https://cdn.discordapp.com/avatars/<%=id%>/<%=avatar%>.png">
         </nav>        
     </header>
     <section class="main">
         <section class="gameMain">
             <h1><%= game.name %></h1>
             <img class="gameImg" src="<%= game.background_image %>" alt="">  
-            <section>
+            <section class="addFriend">
                 <h3>Find your PlayerToo:</h3>
                 <ul class="users">
                     <% users.forEach(e => { %>
-                        <li>
+                        <li class="matchedResults">
                             <span><%= e.username %></span>
                         </li>
         
@@ -32,7 +33,7 @@
                 </ul>
             </section>
         </section>
-        <section>
+        <section class="gameDescriptionContainer">
             <p class="gameDescription"><%=game.description_raw%></p>
         </section>
         

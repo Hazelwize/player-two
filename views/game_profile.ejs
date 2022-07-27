@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
-    <title>Document</title>
+    <title>PlayerToo</title>
 </head>
 <body>
     <header class="header">
@@ -14,24 +14,25 @@
                 <li class="navItem"><a href="/user/profile">My Games</a></li>
                 <li class="navItem"><a href="/games/search">Search</a></li>                    
             </ul>
+            <img class="userNav userAvatar" src="https://cdn.discordapp.com/avatars/<%=id%>/<%=avatar%>.png">
         </nav>        
     </header>
     <section class="main">
         <section class="gameMain">
             <h1><%= game.name %></h1>
             <img class="gameImg" src="<%= game.background_image %>" alt="">  
-            <section>
+            <section class="addFriend">
                 <h2>Join the list to find friends: </h2>
                 <form action="/games/addGame" method="POST">
-                    <label>Hours Played:
-                        <input type="text" name="hoursPlayed">
+                    <label class="hoursLabel">Hours Played:
+                        <input class="searchBar" type="text" name="hoursPlayed">
                     </label>
                     <input type="hidden" name="slug" value="<%=game.slug%>">
                     <button type="submit">Add Game</button>
                 </form>
             </section> 
         </section>
-        <section>
+        <section class='gameDescriptionContainer'>
             <p class="gameDescription"><%=game.description_raw%></p>
         </section>
         

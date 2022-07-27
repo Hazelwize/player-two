@@ -4,7 +4,7 @@ require('dotenv').config({path: '../config/.env'})
 
 module.exports = {
     getIndex : (req,res)=>{
-        res.render('games.ejs',{name : req.user.username})
+        res.render('games.ejs',{name : req.user.username, id: req.user.discordID, avatar: req.user.avatar})
     },
     searchGames: async(req,res) =>{
         try{
@@ -15,7 +15,7 @@ module.exports = {
             const data = await response.data.results; 
             console.log(data);
             const filteredGames = await data.filter(e => e.rating >= 3)
-            res.render('search.ejs', {games: filteredGames, name: req.user.username})
+            res.render('search.ejs', {games: filteredGames, name: req.user.username, id:req.user.discordID, avatar: req.user.avatar})
         }
         catch(err){
             console.log(err)
@@ -30,7 +30,7 @@ module.exports = {
             
             // console.log(response)
             const data = await response.data
-            res.render('game_profile.ejs', {game: data, name: req.user.username})
+            res.render('game_profile.ejs', {game: data, name: req.user.username, id: req.user.discordID, avatar: req.user.avatar})
         }
         catch(err){
             console.log(err)
@@ -63,7 +63,7 @@ module.exports = {
                 })
             })
             console.log(filteredUsers)
-            res.render('game_friends.ejs', {game: filteredGames, users: filteredUsers, name: req.user.username})
+            res.render('game_friends.ejs', {game: filteredGames, users: filteredUsers, name: req.user.username, id: req.user.discordID, avatar: req.user.avatar})
         }
         catch(err){
             console.log(err)
