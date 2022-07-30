@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>PlayerToo</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="flex">
+            <ul class="flex navList">
+                <li class="navItem"><a href="/user/profile">My Games</a></li>
+                <li class="navItem"><a href="/games/search">Search</a></li>                    
+            </ul>
+            <a class="userNav" href="/user/profile"><img class="userNav userAvatar" src="https://cdn.discordapp.com/avatars/<%=id%>/<%=avatar%>.png"></a>
+        </nav>        
+    </header>
+    <ul class="flex listOfGames">
+        <% games.forEach(e => { %>
+            <li class="flex gameUpdateCard">
+                <a class="titleLink" href="/games/profile/<%=e.gameName%>"><span class=""><%= e.gameName %></span></a> 
+                <form class="hoursUpdateForm" action="user/update/:<%=e.gameName%>" method:'PUT'>
+                    <input placeholder="<%=e.hoursPlayed%>"class='hoursInput' name="hoursPlayed">
+                    <button class="updateBtn">Update Hours</button>
+                </form>
+                <span class="deleteSpan">Remove game from "My Games": <a class="deleteBtn" href="/user/delete-game/:<%=e.gameName%>">Delete</a></span>
+            </li>
+        <%})%>
+    </ul>
+
+</body>
+</html>

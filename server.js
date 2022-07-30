@@ -8,6 +8,7 @@ const connectDB = require('./config/database')
 const homeRoutes = require('./routes/home')
 const authRoutes = require('./routes/auth')
 const gamesRoutes = require('./routes/games')
+const userRoutes = require('./routes/user')
 require('dotenv').config({path: './config/.env'})
 const cors = require('cors')
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
@@ -42,6 +43,7 @@ app.use(passport.session())
 //Routes
 
 app.use('/', homeRoutes)
+app.use('/user', userRoutes)
 app.use('/auth', authRoutes)
 app.use('/games', gamesRoutes)
 
