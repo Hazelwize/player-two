@@ -21,4 +21,17 @@ module.exports = {
         }
            
     },
+    deleteGame: async(req,res) =>{
+        try{
+            const gameToDelete = req.body.gameToDelete
+            const doc = await User.findOne({_id: req.user._id})
+            doc.games = doc.games.filter(e => e.gameName !== gameToDelete)
+            await doc.save()
+            console.log(gameToDelete)
+            res.json('game deleted')
+        }
+        catch(err){
+            console.log(err)
+        }
+    },
 }

@@ -21,13 +21,13 @@
     </header>
     <ul class="flex listOfGames">
         <% games.forEach( e => { %>
-            <li class="flex gameUpdateCard">
+            <li data-name="<%=e.gameName%>" class="flex gameUpdateCard">
                 <a class="titleLink" href="/games/profile/<%=e.gameName%>"><span class=""><%= e.gameName %></span></a> 
                 <form data-name="<%=e.gameName%>" class="hoursUpdateForm">
                     <input placeholder="<%=e.hoursPlayed%>"class='hoursInput'>
                     <button type="button" class="updateBtn">Update Hours</button>
                 </form>
-                <span class="deleteSpan">Remove game from "My Games": <a class="deleteBtn" href="/user/delete-game/:<%=e.gameName%>">Delete</a></span>
+                <span class="deleteSpan">Remove game from "My Games": <span class="deleteBtn">Delete</span></span>
             </li>
         <%})%>
     </ul>

@@ -29,6 +29,21 @@ async function updateHours(){
     }
 }
 
-function deleteGame(){
-
+async function deleteGame(){
+    const gameName = this.parentNode.parentNode.dataset.name
+    try{
+        const response = await fetch('/user/delete-game',{
+            method: 'put',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
+                'gameToDelete': gameName,
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload(true)
+    }
+    catch(err){
+        console.log(err)
+    }
 }
