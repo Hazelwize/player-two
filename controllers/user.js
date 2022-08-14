@@ -34,4 +34,15 @@ module.exports = {
             console.log(err)
         }
     },
+    logout: async(req,res) =>{
+        try{
+            req.logout(function(err) {
+                if (err) { return next(err); }
+                res.redirect('/');
+              });
+        }
+        catch(err){
+            console.log(err)
+        }
+    },
 }

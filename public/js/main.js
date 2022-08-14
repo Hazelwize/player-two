@@ -1,13 +1,34 @@
 const updateButton = document.querySelectorAll('.updateBtn')
 const deleteButton = document.querySelectorAll('.deleteBtn')
+const logoutBtn = document.querySelector('.logoutBtn')
+//userIconClicked
+const userIcon = document.getElementById('userIcon')
+const hiddenMenu = document.getElementById('menuSection')
 
 Array.from(updateButton).forEach(e => e.addEventListener('click', updateHours))
 Array.from(deleteButton).forEach(e => e.addEventListener('click', deleteGame))
+logoutBtn.addEventListener('click', logoutUser)
+userIcon.addEventListener('click', menuAnimation);
+
+function menuAnimation(){
+    hiddenMenu.classList.toggle('hidden')
+    userIcon.classList.toggle('userIconClicked')
+}
 
 
-console.log(updateButton)
-
-
+async function logoutUser(){
+    try{
+        const response = await fetch('/user/logout',{
+            method: 'post',
+        })
+        const data = response.json()
+        console.log(data)
+        window.location.replace("/")
+    }
+    catch(err){
+        console.log(err)
+    }
+}
 async function updateHours(){
     const gameName = this.parentNode.dataset.name
     const hours = this.previousElementSibling.value

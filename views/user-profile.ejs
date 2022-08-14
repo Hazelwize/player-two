@@ -16,9 +16,19 @@
                 <li class="navItem"><a href="/user/profile">My Games</a></li>
                 <li class="navItem"><a href="/games/search">Search</a></li>                    
             </ul>
-            <a class="userNav" href="/user/profile"><img class="userNav userAvatar" src="https://cdn.discordapp.com/avatars/<%=id%>/<%=avatar%>.png"></a>
-        </nav>        
+            
+            <img id="userIcon" class="userNav userAvatar" src="https://cdn.discordapp.com/avatars/<%=id%>/<%=avatar%>.png">
+        </nav>
+
     </header>
+    <div class=" logoutContainer">
+        <div class="spacingDiv"></div>
+        <section id="menuSection" class="hidden menuShow">
+            <span id="menuName" class=""><%=name%></span>
+            <button id="menuBtn" type="button" class="logoutBtn">Logout</button>
+        </section>
+    </div>
+    
     <ul class="flex listOfGames">
         <% games.forEach( e => { %>
             <li data-name="<%=e.gameName%>" class="flex gameUpdateCard">

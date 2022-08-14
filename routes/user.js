@@ -6,4 +6,5 @@ const userController = require('../controllers/user')
 router.get('/profile', ensureAuth, userController.getProfile)
 router.put('/updateHours', userController.updateGameHours)
 router.put('/delete-game', userController.deleteGame)
+router.post('/logout', userController.logout)
 module.exports = router;

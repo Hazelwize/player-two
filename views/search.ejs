@@ -14,9 +14,16 @@
                 <li class="navItem"><a href="/user/profile">My Games</a></li>
                 <li class="navItem"><a href="/games/search">Search</a></li>                    
             </ul>
-            <img class="userNav userAvatar" src="https://cdn.discordapp.com/avatars/<%=id%>/<%=avatar%>.png">
+            <img id="userIcon" class="userNav userAvatar" src="https://cdn.discordapp.com/avatars/<%=id%>/<%=avatar%>.png">
         </nav>        
     </header>
+    <div class=" logoutContainer">
+        <div class="spacingDiv"></div>
+        <section id="menuSection" class="hidden menuShow">
+            <span id="menuName" class=""><%=name%></span>
+            <button id="menuBtn" type="button" class="logoutBtn">Logout</button>
+        </section>
+    </div>
     <!-- avatars/user_id/user_avatar.png  -->
     
     <form action="/games/search" method="GET">
@@ -31,6 +38,6 @@
             </li>
         <%}%>
     </ul>
-    
+    <script src="/js/main.js"></script>
 </body>
 </html>
