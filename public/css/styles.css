@@ -53,10 +53,14 @@ body{
     color: #39A7FF;
     font-family: 'Roboto Mono', monospace;
 }
+html{
+    scroll-behavior: smooth;
+}
 .main{
     text-align: center;
 }
 .logo{
+    filter: drop-shadow(20px 20px 3px black);
     max-width: 60%;
     
 }
