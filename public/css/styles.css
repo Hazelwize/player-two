@@ -47,20 +47,25 @@ table {
 	border-spacing: 0;
 }
 
+html,body{
+    margin: 0 ;
+    min-height: 100%;
+}
+
 body{
     box-sizing: border-box;
-    background: #003459;
-    color: #39A7FF;
     font-family: 'Roboto Mono', monospace;
 }
 html{
+    height: auto;
     scroll-behavior: smooth;
+    background: linear-gradient(#1C3041, #1A1423) no-repeat;
 }
 .main{
     text-align: center;
 }
 .logo{
-    filter: drop-shadow(20px 20px 3px black);
+    filter: drop-shadow(20px 20px 3px #1A1423);
     max-width: 60%;
     
 }
@@ -78,11 +83,12 @@ html{
     50%  { transform: translate(0, 15px); }
     100%   { transform: translate(0, -0px); }   
 }
+
 .header{
     padding: 20px;
-    border-radius: 0 0 30px 30px;
-    background: linear-gradient(#003242,#00171F);
-    box-shadow: 0 10px 20px #39A7FF;
+    border-radius: 0 0 20px 20px;
+    background: linear-gradient(#1A1423 10%, #1A1423 95%, #666B6A 100%);
+    box-shadow: 0 5px 10px RGB(0,255,171);
     
 }
 nav{
@@ -103,7 +109,7 @@ nav{
     display: inline-block;
 }
 .navItem>a{
-    color:#39A7FF;
+    color:RGB(0,255,171);
     font-size: 30px;
     font-weight: 700;
     text-shadow: 3px 3px 3px black;
@@ -119,7 +125,7 @@ nav{
     border-radius: 25px;
     width: 25%;
     margin: 30px auto;
-    background: linear-gradient(#39A7FF,#772D8B);
+    background: linear-gradient(#39A7FF,rgb(46, 46, 46));
     
 }
 
@@ -155,13 +161,16 @@ h1{
     border-radius: 25px;
     background: linear-gradient(#003241, #00171F);
     text-shadow: 3px 3px 3px black;
-    color: #BC96E6;
+    color: RGB(0,255,171);
     font-weight: 700;
     display: block;
     font-size: 30px;
     padding: 20px 50px;
     text-decoration: none;
   
+}
+.loginButton:hover{
+    box-shadow: inset 0px -10px 20px rgba(0,0,0,.5);
 }
 .games{
     display:flex;
@@ -205,7 +214,7 @@ form{
     padding: 10px;
     border-radius: 25px;
     box-shadow: inset 4px 4px 4px rgba(0,0,0,.5);
-    border: none;
+    border: 3px solid #00FFAB;
 }
 button{
     margin: 0 auto;
@@ -213,11 +222,11 @@ button{
     font-size: 20px;
     padding: 10px 40px;
     font-weight: 700;
-    color: #BC96E6;
-    text-shadow: 2px 2px 1px #542062;
-    background: linear-gradient(#ac60c1, #542062);
+    color: #00FFAB;
+    border: 3px solid #00FFAB;
+    text-shadow: 2px 2px 1px #00171F;
+    background: linear-gradient(#00171F, #1A1423);
     border-radius: 25px;
-    border: none;
     transform: translateX(-50px);
 }
 .userNav{
@@ -225,6 +234,7 @@ button{
     margin-right: 40px;
 }
 .searchCaption{
+    color: #F5E6E8;
     font-size: 30px;
     font-weight: 700;
 }
@@ -261,10 +271,10 @@ button{
     width: 50px;
     border-radius: 50%;
     border: 2px solid #003459;
-    box-shadow: 0px 0px 5px 5px #39A7FF;
+    box-shadow: 0px 0px 5px 5px#00FFAB;
 }
 .userAvatar:hover{
-    box-shadow: 0px 0px 3px 3px #39A7FF;
+    box-shadow: 0px 0px 3px 3px #00FFAB;
 }
 .homeNav{
     justify-content: space-between;
@@ -280,7 +290,7 @@ button{
     padding: 10px;
     border-radius: 25px;
     box-shadow: inset 4px 4px 4px rgba(0,0,0,.5);
-    border: 1px solid #003459;
+    border: 3px solid #00FFAB;
 }
 .listOfGames{
     margin: 0 auto;
@@ -313,7 +323,8 @@ button{
     width: 30%;
     position: relative;
     right: 20px;
-    border: 2px solid #003459;
+    bottom: 1px;
+    border: 3px solid #00FFAB;
 }
 .deleteBtn{
     cursor: pointer;
@@ -326,6 +337,7 @@ button{
     border:2px solid rgb(255, 252, 219);   
 }  
 .deleteSpan{
+    color: #F5E6E8;
     font-weight: bold;
     font-size: 18px;
     margin: 20px;
@@ -347,7 +359,7 @@ button{
     animation-name: iconPopUp;
     animation-duration: .2s;  
     width: 13%;
-    background: rgba(0,0,0,.5);
+    background: rgba(26, 20, 35, .5);
     border: 2px solid rgba(255,255,255,.7);
     color: white;
     font-weight: 700;
@@ -386,6 +398,11 @@ button{
 }
 .spacingDiv{
     height: 169px;
+}
+.menuName{
+    color: #00FFAB;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 
