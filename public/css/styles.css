@@ -125,7 +125,7 @@ nav{
     border-radius: 25px;
     width: 25%;
     margin: 30px auto;
-    background: linear-gradient(#39A7FF,rgb(46, 46, 46));
+    background: linear-gradient(#00FFAB,rgb(46, 46, 46));
     
 }
 
@@ -144,6 +144,7 @@ h1{
 }
 
 .gameDescription{
+    color: #F5E6E8;
     margin-top: 75px;
     font-size: 25px;
     line-height: 37px;
@@ -159,7 +160,7 @@ h1{
     width: 100%;
     text-align: center;
     border-radius: 25px;
-    background: linear-gradient(#003241, #00171F);
+    background: linear-gradient(#1C2F40, #00171F);
     text-shadow: 3px 3px 3px black;
     color: RGB(0,255,171);
     font-weight: 700;
@@ -180,26 +181,33 @@ h1{
 
 }
 .gameCard{
-    background: #A79AB2;
+    background: linear-gradient(160deg, rgba(255, 255, 255, .1) 30%, rgba(255,255,255,.4) 60%, rgba(255, 255, 255, .1) 100%);  
+    backdrop-filter: blur(5px);
     border-radius: 25px;
-    box-shadow: 10px 10px 10px #772D8B;
+    /* border: 4px solid rgba(168, 216, 253, .2); */
+    box-shadow:5px 5px 0px  rgba(255,255,255,.2), 5px 5px 5px 10px rgba(0, 255, 171,.4);
     list-style-type: none;
     font-size: 20px;
     font-weight: bold;
     width: 26%;
-    padding: 30px;
+    padding: 20px 10px 50px 10px;
     margin: 50px 0px;
+}
+
+.imgContainer{
+    width: 100%;
+    height:250px;
 }
 .gameImg{
     border-radius: 20px;
     margin: 0 auto;
     margin-bottom: 50px;
     margin-top: 20px;
-    border: 5px solid #772D8B;
+    /* border: 5px solid #772D8B; */
     /* padding-top: 50px; */
-    display: block;
     object-fit: cover;
-    max-width: 100%;
+    width: 400px;
+    height: 250px;
 }
 form{
     text-align: center;
@@ -215,6 +223,11 @@ form{
     border-radius: 25px;
     box-shadow: inset 4px 4px 4px rgba(0,0,0,.5);
     border: 3px solid #00FFAB;
+}
+.searchBar:focus{
+    color: #1A1423;
+    outline: none;
+    box-shadow: 0 0 5px #00FFAB;
 }
 button{
     margin: 0 auto;
@@ -245,21 +258,24 @@ button{
 
 .gameTitle{
     font-size: 35px;
-    text-shadow: 2px 2px 1px rgba(255,255,255,.5);
-    color: #003459; 
+    text-shadow: 3px 3px 2px #1A1423;
+    /* text-shadow: 2px 2px 1px rgba(255,255,255,.5); */
+    color: #F5E6E8;
     font-weight: bold;
 }
 .titleLink{
+    
     text-decoration: none;
 }
 .hoursLabel{
     font-size: 24px;
 }
 .gameMain{
-    padding: 100px;
+    color: #F5E6E8;
+    padding: 0 100px;
 }
 .gameDescriptionContainer{
-    padding: 100px;
+    padding: 0 100px;
 }
 .addFriend{
     font-size: 24px;
@@ -404,6 +420,68 @@ button{
     font-size: 20px;
     font-weight: 700;
 }
+
+.howToList{
+    display: flex;
+    flex-wrap: wrap;
+    color: #F5E6E8;
+    margin-top: 100px;
+    
+}
+.howToItem:nth-child(even){
+    background: #1A1423;
+    width: 70%;
+    border: 5px solid #00FFAB;
+    box-shadow: inset -20px 0px 20px rgba(0, 255, 171,.8);
+    border-left: none;
+    border-radius: 0 30px 30px 0;
+    padding-left: 40px; 
+}
+.howToItem:nth-child(odd){
+    background: #00FFAB;
+    box-shadow: inset 20px 0px 20px rgba(26, 20, 35, .8);
+    border: 5px solid #1A1423;
+    color: #1A1423;
+    width: 70%;
+    margin-left: 30%;
+    align-self: flex-end; 
+    border-radius: 30px 0 0 30px;
+    border-right: none;
+
+}
+
+.howToItem{
+    margin: 20px 0;
+    width: 90%;
+    font-weight: 700;
+    padding: 50px 100px;
+    border-radius: 30px;
+
+}
+.howToHeader{
+    padding: 30px 0;
+    font-size: 30px;
+    font-weight: 700;
+
+}
+.howToInfo{
+    padding: 30px 0;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.footer{
+    height: 70px;
+    color:#F5E6E8;
+    background: #1A1423;
+    text-align: center;
+    margin-top: 100px;
+}
+.webLink{
+    color: #F5E6E8;
+}
+
+
 
 
 
