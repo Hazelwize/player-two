@@ -1,0 +1,217 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+html,body{
+    margin: 0 ;
+    min-height: 100%;
+}
+html{
+    height: auto;
+    scroll-behavior: smooth;
+    background: linear-gradient(#1C3041, #1A1423) no-repeat;
+}
+body{
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+/* ==========================================
+----------------LAYOUT------------------
+========================================== */
+.flex{
+    display: flex;
+}
+.navBase{
+    justify-content: space-between;
+}
+.navList{
+    align-content: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+.mainLogo{
+    max-width: 60%;
+    filter: drop-shadow(20px 20px 3px #1A1423);
+}
+.logoContainer{
+    justify-content: center;
+    padding: 50px 0;
+    margin-bottom: 75px;
+}
+.howToList{
+    display: flex;
+    flex-wrap: wrap;
+    color: #F5E6E8;
+    margin: 100px 0;
+    
+}
+.infoBox{
+    margin: 20px 0;
+    padding: 75px;
+}
+.infoBox:nth-child(even){
+    background: #1A1423;
+    width: 70%;
+    border: 5px solid #00FFAB;
+    box-shadow: inset -20px 0px 20px rgba(0, 255, 171,.8);
+    border-left: none;
+    border-radius: 0 30px 30px 0;
+    padding-left: 40px; 
+}
+.infoBox:nth-child(odd){
+    background: #00FFAB;
+    box-shadow: inset 20px 0px 20px rgba(26, 20, 35, .8);
+    border: 5px solid #1A1423;
+    color: #1A1423;
+    width: 70%;
+    margin-left: 30%;
+    align-self: flex-end; 
+    border-radius: 30px 0 0 30px;
+    border-right: none;
+}
+.footer{
+    height: 70px;
+    color:#F5E6E8;
+    background: #1A1423;
+    text-align: center;
+    margin-top: 100px;
+}
+.loginContainer{
+    width: 210px;
+}
+.center{
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+----------------STYLES--------------------
+========================================== */
+.header{
+    margin-bottom: 100px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+    background: linear-gradient(#1A1423 10%, #1A1423 95%, #666B6A 100%);
+    box-shadow: 0 5px 10px RGB(0,255,171); 
+}
+.headerText{
+    line-height: 36px;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.parText{
+    text-indent: 10%;
+    line-height: 33px;
+    font-size: 22px;
+    text-decoration: none;
+}
+.lightGreen{
+    color: #00FFAB;
+}
+.darkText{
+    color: #1A1423;
+}
+.loginButton{
+    padding: 20px 60px;
+    background: linear-gradient(#1C2F40, #00171F);
+    text-shadow: 3px 3px 3px black;
+    border-radius: 25px;
+}
+.loginSection{
+    justify-content: center;
+    padding: 5px;
+    border-radius: 25px;
+    width: 100%;
+    /* margin: 30px auto; */
+    background: linear-gradient(#00FFAB,rgb(46, 46, 46));  
+}
+.simpleBtn{
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 20px;
+    background:#1C2F40;
+    border: 2px solid #00FFAB;
+    padding: 10px 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+.footerLink{
+    color: #00FFAB;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+
+
+/* ==========================================
+----------------STATES--------------------
+========================================== */
+
+.floating { 
+    animation-name: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+ 
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+}
+.loginButton:hover{
+    box-shadow: inset 0px -10px 20px rgba(0,0,0,.5);
+}
+.simpleBtn:hover{
+    background: #00FFAB;
+    color: #1A1423;
+}
+.navLink:hover{
+    color: #00B5FF;
+}
