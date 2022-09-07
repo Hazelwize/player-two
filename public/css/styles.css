@@ -184,7 +184,6 @@ h1{
     background: linear-gradient(160deg, rgba(255, 255, 255, .1) 30%, rgba(255,255,255,.4) 60%, rgba(255, 255, 255, .1) 100%);  
     backdrop-filter: blur(5px);
     border-radius: 25px;
-    /* border: 4px solid rgba(168, 216, 253, .2); */
     box-shadow:5px 5px 0px  rgba(255,255,255,.2), 5px 5px 5px 10px rgba(0, 255, 171,.4);
     list-style-type: none;
     font-size: 20px;

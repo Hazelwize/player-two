@@ -67,6 +67,7 @@ body{
 }
 .navBase{
     justify-content: space-between;
+    padding: 0 15px;
 }
 .navList{
     align-content: center;
@@ -126,7 +127,16 @@ body{
 .center{
     margin: 0 auto;
 }
-
+.barBtn{
+    transform: translateY(-3px) translateX(-50px);
+}
+.userAvatar{
+    max-width: 40px;
+    border-radius: 50%;
+    border: 2px solid #003459;
+    box-shadow: 0px 0px 5px 5px#00FFAB;
+    cursor: pointer;
+}
 
 /* ==========================================
 ----------------STYLES--------------------
@@ -174,9 +184,11 @@ body{
 .simpleBtn{
     font-size: 16px;
     font-weight: 700;
-    border-radius: 20px;
+    letter-spacing: 2px;
+    line-height: 18px;
+    border-radius: 25px;
     background:#1C2F40;
-    border: 2px solid #00FFAB;
+    border: 3px solid #00FFAB;
     padding: 10px 20px;
     display: inline-block;
     text-decoration: none;
@@ -186,8 +198,37 @@ body{
     font-size: 18px;
     text-decoration: none;
 }
-
-
+.searchForm{
+    text-align: center;
+}
+.barInput{
+    width: 40%;
+    border-radius: 25px;
+    box-shadow: inset 4px 4px 4px rgba(0,0,0,.5);
+    border: 3px solid #00FFAB;
+}
+.barInput:focus{
+    color: #1A1423;
+    outline: none;
+    box-shadow: 0 0 5px #00FFAB;
+}
+.darkShadow{
+    text-shadow: 3px 3px 3px #1A1423;
+}
+.logoutContainer{
+    justify-content: flex-end;
+}
+.userOptions{
+    padding: 40px;
+    border: 3px solid #F5E6E8;
+    width: 140px;
+    gap: 30px;
+    background: rgba(102, 107, 106,.6);
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 25px;
+    transform: translateY(-145px);
+}
 
 /* ==========================================
 ----------------STATES--------------------
@@ -214,4 +255,26 @@ body{
 }
 .navLink:hover{
     color: #00B5FF;
+}
+.userAvatar:hover{
+    box-shadow: 0px 0px 3px 3px #00FFAB;
+}
+.hidden{
+    transform: scale(0);
+}
+@keyframes iconSlide {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-200px);
+    }
+}
+@keyframes iconPopUp{
+    0%{
+        transform: translateY(-50px) scale(.1);
+    }
+    100%{
+        transform: translateY(-50px) scale(1);
+    }
 }
