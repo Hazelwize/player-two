@@ -1,3 +1,5 @@
+const Game = require('../models/Game')
+
 module.exports = {
 
     checkGameName: (req,res,next) =>{
@@ -7,14 +9,20 @@ module.exports = {
             next()
         }
     },
-    checkHasGame: (req,res,next) =>{
-        let hasGame = req.user.games.some(e => e.gameName == req.params.gameName)
-        console.log(hasGame)
-        if(hasGame){
-            res.redirect(`/games/profile/added/${req.params.gameName}`)
-        }else{
-            next()
+    checkHasGame: async (req,res,next) =>{
+        try{
+            let hasGame = await Game.findOne({name: req.params.gameName, userId: req.user._id})
+            console.log(hasGame)
+            if(hasGame){
+                res.redirect(`/games/profile/added/${req.params.gameName}`)
+            }else{
+                next()
+            }
         }
+        catch(err){
+            console.log(err)
+        }
+        
     },
 
 }

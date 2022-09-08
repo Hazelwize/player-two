@@ -31,12 +31,11 @@
             <section class="addFriend">
                 <h3>Find your PlayerToo:</h3>
                 <ul class="users">
-                    <% users.forEach(e => { %>
-                        <li class="matchedResults">
-                            <span><%= e.username %></span>
-                        </li>
-        
-                    <%})%>
+                <%users.forEach(e => { %>
+                    <li class="matchedResults">
+                        <span><%=e%></span>
+                    </li>
+                <%})%>
                 </ul>
             </section>
         </section>
