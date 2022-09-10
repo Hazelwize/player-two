@@ -282,19 +282,3 @@ body{
 .hidden{
     transform: scale(0);
 }
-/* @keyframes iconSlide {
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(-200px);
-    }
-}
-@keyframes iconPopUp{
-    0%{
-        transform: translateY(-50px) scale(.1);
-    }
-    100%{
-        transform: translateY(-50px) scale(1);
-    }
-} */
