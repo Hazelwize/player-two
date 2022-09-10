@@ -1,18 +1,18 @@
 const updateButton = document.querySelectorAll('.updateBtn')
 const deleteButton = document.querySelectorAll('.deleteBtn')
-const logoutBtn = document.querySelector('.logoutBtn')
+// const logoutBtn = document.querySelector('.logoutBtn')
 //userIconClicked
 const userIcon = document.getElementById('userIcon')
 const hiddenMenu = document.getElementById('menuSection')
 
 Array.from(updateButton).forEach(e => e.addEventListener('click', updateHours))
 Array.from(deleteButton).forEach(e => e.addEventListener('click', deleteGame))
-logoutBtn.addEventListener('click', logoutUser)
+// logoutBtn.addEventListener('click', logoutUser)
 userIcon.addEventListener('click', menuAnimation);
 
 function menuAnimation(){
-    hiddenMenu.classList.toggle('hidden')
-    userIcon.classList.toggle('userIconClicked')
+    hiddenMenu.classList.toggle('popUp')
+    userIcon.classList.toggle('slideLeft')
 }
 
 

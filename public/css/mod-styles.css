@@ -136,6 +136,9 @@ body{
     border: 2px solid #003459;
     box-shadow: 0px 0px 5px 5px#00FFAB;
     cursor: pointer;
+    z-index: 1;
+    transform: 0;
+    transition: transform .3s ease-in-out;
 }
 
 /* ==========================================
@@ -219,6 +222,7 @@ body{
     justify-content: flex-end;
 }
 .userOptions{
+
     padding: 40px;
     border: 3px solid #F5E6E8;
     width: 140px;
@@ -227,25 +231,41 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 25px;
-    transform: translateY(-145px);
+    transform-origin: top right;
+    transform: translateY(-145px) translateX(-30px) scale(0);
+    transition: transform .3s ease-in-out;
 }
 
 /* ==========================================
 ----------------STATES--------------------
 ========================================== */
+/* User Icon Animation Class */
+.slideLeft{
+    transform:translateX(-200px);
+    z-index: 1;
+    transition: transform .5s ease-in-out;
+}
 
+/* Logout Container Animation Class */
+.popUp{
+    transform: translateY(-145px) translateX(-30px) scale(1);
+    transform-origin: top right;
+    transition: transform .5s ease-in-out;
+}
+
+/* Floating Logo on Landing Page */
 .floating { 
     animation-name: floating;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
- 
 @keyframes floating {
     0% { transform: translate(0,  0px); }
     50%  { transform: translate(0, 15px); }
     100%   { transform: translate(0, -0px); }   
 }
+
 .loginButton:hover{
     box-shadow: inset 0px -10px 20px rgba(0,0,0,.5);
 }
@@ -262,7 +282,7 @@ body{
 .hidden{
     transform: scale(0);
 }
-@keyframes iconSlide {
+/* @keyframes iconSlide {
     0%{
         transform: translateX(0);
     }
@@ -277,4 +297,4 @@ body{
     100%{
         transform: translateY(-50px) scale(1);
     }
-}
+} */
