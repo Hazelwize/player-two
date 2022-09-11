@@ -140,6 +140,42 @@ body{
     transform: 0;
     transition: transform .3s ease-in-out;
 }
+.games{    
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/* search results cards */
+.gameCard{
+    text-align: center;
+    width: 20%;
+    padding: 30px;
+}
+
+/* shadow over game search result cards */
+.overShadow{
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,1));
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-end;
+    transition: background 1s ease-in-out;
+}
+/* holds background image for game search results */
+.imgContainer{
+    border-radius: 20px;
+    width: 85%;
+    height: 400px;
+    background-position: 50% 100%;
+    background-size: cover;
+}
+.gameTitle{
+    color: white;
+    font-size: 26px;
+    text-shadow: 2px 2px 2px rgb(0,0,0);
+    padding: 30px 10px;
+    
+}
 
 /* ==========================================
 ----------------STYLES--------------------
@@ -222,7 +258,7 @@ body{
     justify-content: flex-end;
 }
 .userOptions{
-
+    text-align: center;
     padding: 40px;
     border: 3px solid #F5E6E8;
     width: 140px;
@@ -261,9 +297,12 @@ body{
     animation-timing-function: ease-in-out;
 }
 @keyframes floating {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 15px); }
-    100%   { transform: translate(0, -0px); }   
+    0% { transform: translate(0,  0px); 
+        filter: drop-shadow(30px 30px 10px #1A1423);}
+    50%  { transform: translate(0, 15px); 
+        filter: drop-shadow(20px 20px 1px #1A1423);;}
+    100%   { transform: translate(0, -0px);
+        filter: drop-shadow(30px 30px 10px #1A1423); }   
 }
 
 .loginButton:hover{
@@ -281,4 +320,14 @@ body{
 }
 .hidden{
     transform: scale(0);
+}
+/* search results shadow gets lighter on hover */
+.overShadow:hover{
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.6));
+    transition: background .1s ease-in-out;
+}
+/* makes game search result larger on hover */
+.imgContainer:hover{
+    transform: scale(1.05);
+    transition: transform .1s ease-in-out;
 }
