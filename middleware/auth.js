@@ -15,7 +15,7 @@ module.exports = {
     },
     checkAuth: function(req, res, next){
       if(req.isAuthenticated()){
-        res.redirect('/games')
+        res.redirect('/games/search')
       }else{
         return next()
       }

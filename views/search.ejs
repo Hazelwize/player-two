@@ -4,40 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/mod-styles.css">
     <title>PlayerToo</title>
 </head>
 
 <body>
     <header class="header">
-        <nav class="flex">
+        <nav class="flex navBase">
             <ul class="flex navList">
-                <li class="navItem"><a href="/user/profile">My Games</a></li>
-                <li class="navItem"><a href="/games/search">Search</a></li>                    
+                <li class="navItem headerText"><a class="navLink headerText lightGreen" href="/user/profile">My Games</a></li>
+                <li class="navItem headerText"><a class='navLink headerText lightGreen' href="/games/search">Search</a></li>                    
             </ul>
-            <img id="userIcon" class="userNav userAvatar" src="https://cdn.discordapp.com/avatars/<%=id%>/<%=avatar%>.png">
+            <img id="userIcon" class="userAvatar" src="https://cdn.discordapp.com/avatars/<%=id%>/<%=avatar%>.png">
         </nav>        
     </header>
-    <div class=" logoutContainer">
-        <div class="spacingDiv"></div>
-        <section id="menuSection" class="hidden menuShow">
-            <span id="menuName" class="menuName"><%=name%></span>
-            <button id="menuBtn" type="button" class="logoutBtn">Logout</button>
+    <div class="flex logoutContainer">
+        <section id="menuSection" class="userOptions flex">
+            <span id="menuName" class="headerText darkShadow lightGreen"><%=name%></span>
+            <button id="logoutBtn" type="button" class="simpleBtn lightGreen">Logout</button>
         </section>
     </div>
     <!-- avatars/user_id/user_avatar.png  -->
     
-    <form action="/games/search" method="GET">
-        <input class="searchBar" type="text" name="gameName">
-        <button class=""type="submit">Search</button>
+    <form class="searchForm center"action="/games/search" method="GET">
+        <legend class="headerText darkShadow lightGreen">Search games. Find friends!</legend>
+        <input class="barInput headerText darkText" type="text" name="gameName">
+        <button class="barBtn simpleBtn lightGreen"type="submit">Search</button>
     </form>
-    <ul class="games">
+    <ul class="flex games">
         <% for(let i = 0; i < games.length ; i++) { %>
             <li class="gameCard">
-                <a class="titleLink" href="/games/profile/<%=games[i].slug%>"><span class="gameTitle" data-id="<%=games[i].id%>"><%= games[i].name %></span>
-                <div class="imgContainer">
-                    <img class="gameImg" src="<%= games[i].background_image %>" alt="">
-                </div>
+                <a class="navLink headerText lightGreen" href="/games/profile/<%=games[i].slug%>">
+                    <div class="imgContainer" style="background-image:url('<%= games[i].background_image %>')">
+                        <div class="overShadow">
+                            <span class="gameTitle center" data-id="<%=games[i].id%>"><%= games[i].name %></span>
+                        </div>
+                    </div>
                 </a>
                 
             </li>

@@ -136,7 +136,68 @@ body{
     border: 2px solid #003459;
     box-shadow: 0px 0px 5px 5px#00FFAB;
     cursor: pointer;
+    z-index: 1;
+    transform: 0;
+    transition: transform .3s ease-in-out;
 }
+.games{  
+    width: 70%; 
+    margin: 0 auto; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* search results cards */
+.gameCard{
+    text-align: center;
+    width: 20%;
+    padding: 30px;
+}
+
+/* shadow over game search result cards */
+.overShadow{
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,1));
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    align-items: flex-end;
+    transition: background 1s ease-in-out;
+}
+/* holds background image for game search results */
+.imgContainer{
+    margin: 0 auto;
+    box-shadow: 5px 5px 8px rgba(0,0,0,.7);
+    border: 2px solid rgb(16, 16, 16);
+    border-radius: 15px;
+    width: 300px;
+    height: 400px;
+    background-position: 50% 100%;
+    background-size: cover;
+}
+.gameTitle{
+    color: white;
+    font-size: 26px;
+    text-shadow: 2px 2px 2px rgb(0,0,0);
+    padding: 30px 10px;   
+}
+.imgProfile{
+    width: 100%;
+    height: 800px;
+    margin-top: -200px;
+    box-shadow: 0px -7px 10px rgba(0,0,0,.5);
+    border: 2px 0 solid rgb(16, 16, 16);
+    background-position: 50% 40%;
+    background-size: cover;
+}
+.overProfile{
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7));
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 
 /* ==========================================
 ----------------STYLES--------------------
@@ -200,7 +261,10 @@ body{
 }
 .searchForm{
     text-align: center;
+    margin-bottom: 80px;
+    margin-top: -200px;
 }
+
 .barInput{
     width: 40%;
     border-radius: 25px;
@@ -212,6 +276,7 @@ body{
     outline: none;
     box-shadow: 0 0 5px #00FFAB;
 }
+
 .darkShadow{
     text-shadow: 3px 3px 3px #1A1423;
 }
@@ -219,6 +284,7 @@ body{
     justify-content: flex-end;
 }
 .userOptions{
+    text-align: center;
     padding: 40px;
     border: 3px solid #F5E6E8;
     width: 140px;
@@ -227,25 +293,46 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 25px;
-    transform: translateY(-145px);
+    transform-origin: top right;
+    transform: translateY(-145px) translateX(-30px) scale(0);
+    transition: transform .3s ease-in-out;
 }
 
 /* ==========================================
 ----------------STATES--------------------
 ========================================== */
+/* User Icon Animation Class */
+.slideLeft{
+    transform:translateX(-200px);
+    z-index: 1;
+    transition: transform .5s ease-in-out;
+}
 
+/* Logout Container Animation Class */
+.popUp{
+    transform: translateY(-145px) translateX(-30px) scale(1);
+    transform-origin: top right;
+    transition: transform .5s ease-in-out;
+}
+
+/* Floating Logo on Landing Page */
 .floating { 
     animation-name: floating;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
- 
 @keyframes floating {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 15px); }
-    100%   { transform: translate(0, -0px); }   
+    0% { transform: translate(0,  0px); 
+        filter: drop-shadow(30px 30px 10px #1A1423);
+        transform: scale(1.03);}
+    50%  { transform: translate(0, 15px); 
+        filter: drop-shadow(15px 15px 1px #1A1423);;}
+    100%   { transform: translate(0, -0px);
+        filter: drop-shadow(30px 30px 10px #1A1423);
+        transform: scale(1.03); }   
 }
+
 .loginButton:hover{
     box-shadow: inset 0px -10px 20px rgba(0,0,0,.5);
 }
@@ -262,19 +349,13 @@ body{
 .hidden{
     transform: scale(0);
 }
-@keyframes iconSlide {
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(-200px);
-    }
+/* search results shadow gets lighter on hover */
+.overShadow:hover{
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.6));
+    transition: background .1s ease-in-out;
 }
-@keyframes iconPopUp{
-    0%{
-        transform: translateY(-50px) scale(.1);
-    }
-    100%{
-        transform: translateY(-50px) scale(1);
-    }
+/* makes game search result larger on hover */
+.imgContainer:hover{
+    transform: scale(1.05);
+    transition: transform .1s ease-in-out;
 }
