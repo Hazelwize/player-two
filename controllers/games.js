@@ -4,9 +4,6 @@ const Game = require('../models/Game')
 require('dotenv').config({path: '../config/.env'})
 
 module.exports = {
-    getIndex : (req,res)=>{
-        res.render('games.ejs',{name : req.user.username, id: req.user.discordID, avatar: req.user.avatar})
-    },
     searchGames: async(req,res) =>{
         try{
             const name = req.query.gameName

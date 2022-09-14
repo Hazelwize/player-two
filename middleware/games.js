@@ -1,10 +1,10 @@
 const Game = require('../models/Game')
 
 module.exports = {
-
     checkGameName: (req,res,next) =>{
         if(req.query.gameName == undefined){
-            res.redirect('/games')
+            req.query.gameName = ' '
+            next()
         }else{
             next()
         }

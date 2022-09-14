@@ -13,7 +13,7 @@ router.get('/discord/redirect', passport.authenticate('discord', {
     failureRedirect: '/'
 }), function(req, res) {
     console.log(req.user)
-    res.redirect('/games') // Successful auth
+    res.redirect('/games/search') // Successful auth
 });
 
 module.exports = router
