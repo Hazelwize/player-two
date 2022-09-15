@@ -46,388 +46,59 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 html,body{
     margin: 0 ;
     min-height: 100%;
-}
-
-body{
-    box-sizing: border-box;
-    font-family: 'Roboto Mono', monospace;
 }
 html{
     height: auto;
     scroll-behavior: smooth;
     background: linear-gradient(#1C3041, #1A1423) no-repeat;
 }
-.main{
-    text-align: center;
+body{
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
 }
-.logo{
-    filter: drop-shadow(20px 20px 3px #1A1423);
-    max-width: 60%;
-    
-}
-.floating { 
-    animation-name: floating;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    margin-left: 30px;
-    margin-top: 100px;
-}
- 
-@keyframes floating {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 15px); }
-    100%   { transform: translate(0, -0px); }   
+.wrapper{
+    min-height: calc(100vh - 70px);
 }
 
-.header{
-    padding: 20px;
-    border-radius: 0 0 20px 20px;
-    background: linear-gradient(#1A1423 10%, #1A1423 95%, #666B6A 100%);
-    box-shadow: 0 5px 10px RGB(0,255,171);
-    
-}
-nav{
-    width: 100%;
-    justify-content: center;
-}
-
+/* ==========================================
+----------------LAYOUT------------------
+========================================== */
 .flex{
     display: flex;
 }
+.navBase{
+    justify-content: space-between;
+    padding: 0 15px;
+}
 .navList{
-    display: flex;
-    margin-left: 50px;
-    gap: 100px;
-    width: 50%;
+    align-content: center;
+    justify-content: space-between;
+    gap: 40px;
 }
-.navItem{
-    display: inline-block;
+.mainLogo{
+    max-width: 60%;
+    filter: drop-shadow(20px 20px 3px #1A1423);
 }
-.navItem>a{
-    color:RGB(0,255,171);
-    font-size: 30px;
-    font-weight: 700;
-    text-shadow: 3px 3px 3px black;
-    text-decoration: none;
-}
-.username{
-    font-size: 20px;
-    font-weight: bold;
-}
-.loginSection{
+.logoContainer{
     justify-content: center;
-    padding: 5px;
-    border-radius: 25px;
-    width: 25%;
-    margin: 30px auto;
-    background: linear-gradient(#00FFAB,rgb(46, 46, 46));
-    
+    padding: 50px 0;
+    margin-bottom: 75px;
 }
-
-/* .wrapper{
-    background: transparent;
-    width: 1440px;
-    margin: 0 auto;
-} */
-.mainTitle{
-    text-align: center;
-    font-size: 40px;
-}
-h1{
-    font-size: 36px;
-    font-weight: bold;
-}
-
-.gameDescription{
-    color: #F5E6E8;
-    margin-top: 75px;
-    font-size: 25px;
-    line-height: 37px;
-}
-.mainLogin{
-    width: 40%;
-    background: linear-gradient(#ac60c1, #542062);
-    border: 10px solid #BC96E6;
-    padding: 40px;
-    border-radius: 20px;
-}
-.loginButton{
-    width: 100%;
-    text-align: center;
-    border-radius: 25px;
-    background: linear-gradient(#1C2F40, #00171F);
-    text-shadow: 3px 3px 3px black;
-    color: RGB(0,255,171);
-    font-weight: 700;
-    display: block;
-    font-size: 30px;
-    padding: 20px 50px;
-    text-decoration: none;
-  
-}
-.loginButton:hover{
-    box-shadow: inset 0px -10px 20px rgba(0,0,0,.5);
-}
-.games{
-    display:flex;
-    justify-content: space-around;
-    text-align: center;
-    flex-wrap: wrap;
-
-}
-.gameCard{
-    background: linear-gradient(160deg, rgba(255, 255, 255, .1) 30%, rgba(255,255,255,.4) 60%, rgba(255, 255, 255, .1) 100%);  
-    backdrop-filter: blur(5px);
-    border-radius: 25px;
-    box-shadow:5px 5px 0px  rgba(255,255,255,.2), 5px 5px 5px 10px rgba(0, 255, 171,.4);
-    list-style-type: none;
-    font-size: 20px;
-    font-weight: bold;
-    width: 26%;
-    padding: 20px 10px 50px 10px;
-    margin: 50px 0px;
-}
-
-.imgContainer{
-    width: 100%;
-    height:250px;
-}
-.gameImg{
-    border-radius: 20px;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    margin-top: 20px;
-    /* border: 5px solid #772D8B; */
-    /* padding-top: 50px; */
-    object-fit: cover;
-    width: 400px;
-    height: 250px;
-}
-form{
-    text-align: center;
-    width: 100%;
-    margin-top: 100px;
-}
-.searchBar{
-    margin: 0 auto;
-    width: 40%;
-    font-size: 20px;
-    font-weight: 700;
-    padding: 10px;
-    border-radius: 25px;
-    box-shadow: inset 4px 4px 4px rgba(0,0,0,.5);
-    border: 3px solid #00FFAB;
-}
-.searchBar:focus{
-    color: #1A1423;
-    outline: none;
-    box-shadow: 0 0 5px #00FFAB;
-}
-button{
-    margin: 0 auto;
-    width: 15%;
-    font-size: 20px;
-    padding: 10px 40px;
-    font-weight: 700;
-    color: #00FFAB;
-    border: 3px solid #00FFAB;
-    text-shadow: 2px 2px 1px #00171F;
-    background: linear-gradient(#00171F, #1A1423);
-    border-radius: 25px;
-    transform: translateX(-50px);
-}
-.userNav{
-    margin-left:auto;
-    margin-right: 40px;
-}
-.searchCaption{
-    color: #F5E6E8;
-    font-size: 30px;
-    font-weight: 700;
-}
-.preSearchSection{
-    text-align: center;
-    margin-top: 100px;
-}
-
-.gameTitle{
-    font-size: 35px;
-    text-shadow: 3px 3px 2px #1A1423;
-    /* text-shadow: 2px 2px 1px rgba(255,255,255,.5); */
-    color: #F5E6E8;
-    font-weight: bold;
-}
-.titleLink{
-    
-    text-decoration: none;
-}
-.hoursLabel{
-    font-size: 24px;
-}
-.gameMain{
-    color: #F5E6E8;
-    padding: 0 100px;
-}
-.gameDescriptionContainer{
-    padding: 0 100px;
-}
-.addFriend{
-    font-size: 24px;
-}
-.matchedResults{
-    margin: 10px 0;
-}
-.userAvatar{
-    width: 50px;
-    border-radius: 50%;
-    border: 2px solid #003459;
-    box-shadow: 0px 0px 5px 5px#00FFAB;
-}
-.userAvatar:hover{
-    box-shadow: 0px 0px 3px 3px #00FFAB;
-}
-.homeNav{
-    justify-content: space-between;
-    gap: 80px;
-    margin: 0 auto;
-}
-
-.hoursInput{
-    margin: 0 auto;
-    width: 300px;
-    font-size: 20px;
-    font-weight: 700;
-    padding: 10px;
-    border-radius: 25px;
-    box-shadow: inset 4px 4px 4px rgba(0,0,0,.5);
-    border: 3px solid #00FFAB;
-}
-.listOfGames{
-    margin: 0 auto;
-    padding: 20px 0 ;
-    width: 80%;
-    flex-wrap: wrap;
-}
-.titleLink{
-    text-transform: capitalize;
-    font-weight: bold;
-    font-size: 25px;
-    color: #39A7FF;
-    width: 100%;
-}
-.gameUpdateCard{
-    margin: 30px 0;
-    width: 32%;
-    padding: 20px;
-    flex-wrap: wrap;
-    
-}
-.hoursUpdateForm{
-    padding: 0;
-    margin: 10px 0;
-    
-}
-.updateBtn{
-    font-size: 16px;
-    padding: 13px 0;
-    width: 30%;
-    position: relative;
-    right: 20px;
-    bottom: 1px;
-    border: 3px solid #00FFAB;
-}
-.deleteBtn{
-    cursor: pointer;
-    text-decoration: none;
-    color: rgb(255, 252, 219);
-    padding: 10px 20px;
-    margin: 25px 0;
-    background: rgb(87, 2, 2); 
-    border-radius: 30px;
-    border:2px solid rgb(255, 252, 219);   
-}  
-.deleteSpan{
-    color: #F5E6E8;
-    font-weight: bold;
-    font-size: 18px;
-    margin: 20px;
-} 
-.logoutContainer{
-    display: flex;
-    justify-content: space-between;
-}
-@keyframes iconPopUp{
-    0%{
-        transform: translateY(-50px) scale(.1);
-    }
-    100%{
-        transform: translateY(-50px) scale(1);
-    }
-}
-
-.menuShow{
-    animation-name: iconPopUp;
-    animation-duration: .2s;  
-    width: 13%;
-    background: rgba(26, 20, 35, .5);
-    border: 2px solid rgba(255,255,255,.7);
-    color: white;
-    font-weight: 700;
-    border-radius: 25px;
-    height: 125px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-    z-index: 1;
-    transform: translateY(-50px);
-}
-.logoutBtn{
-    width: 100%;
-    cursor: pointer;
-    transform: translateX(0);
-}
-@keyframes iconSlide {
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(-200px);
-    }
-}
-.userIconClicked{
-    animation-name: iconSlide;
-    animation-duration: .3s;
-    transform: translateX(-200px);
-    z-index: 2;
-}
-.hidden{
-    display: none;
-}
-.spacingDiv{
-    height: 169px;
-}
-.menuName{
-    color: #00FFAB;
-    font-size: 20px;
-    font-weight: 700;
-}
-
 .howToList{
     display: flex;
     flex-wrap: wrap;
     color: #F5E6E8;
-    margin-top: 100px;
+    margin: 100px 0;
     
 }
-.howToItem:nth-child(even){
+.infoBox{
+    margin: 20px 0;
+    padding: 75px;
+}
+.infoBox:nth-child(even){
     background: #1A1423;
     width: 70%;
     border: 5px solid #00FFAB;
@@ -436,7 +107,7 @@ button{
     border-radius: 0 30px 30px 0;
     padding-left: 40px; 
 }
-.howToItem:nth-child(odd){
+.infoBox:nth-child(odd){
     background: #00FFAB;
     box-shadow: inset 20px 0px 20px rgba(26, 20, 35, .8);
     border: 5px solid #1A1423;
@@ -446,43 +117,295 @@ button{
     align-self: flex-end; 
     border-radius: 30px 0 0 30px;
     border-right: none;
-
 }
-
-.howToItem{
-    margin: 20px 0;
-    width: 90%;
-    font-weight: 700;
-    padding: 50px 100px;
-    border-radius: 30px;
-
-}
-.howToHeader{
-    padding: 30px 0;
-    font-size: 30px;
-    font-weight: 700;
-
-}
-.howToInfo{
-    padding: 30px 0;
-    font-size: 20px;
-    line-height: 30px;
-}
-
 .footer{
-    height: 70px;
+    padding: 25px;
     color:#F5E6E8;
     background: #1A1423;
     text-align: center;
-    margin-top: 100px;
 }
-.webLink{
-    color: #F5E6E8;
+.loginContainer{
+    width: 210px;
+}
+.center{
+    margin: 0 auto;
+}
+.barBtn{
+    transform: translateY(-3px) translateX(-50px);
+}
+.userAvatar{
+    max-width: 40px;
+    border-radius: 50%;
+    border: 2px solid #003459;
+    box-shadow: 0px 0px 5px 5px#00FFAB;
+    cursor: pointer;
+    z-index: 1;
+    transform: 0;
+    transition: transform .3s ease-in-out;
+}
+.games{  
+    width: 70%; 
+    margin: 0 auto; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* search results cards */
+.gameCard{
+    text-align: center;
+    width: 20%;
+    padding: 30px;
+}
+
+/* shadow over game search result cards */
+.overShadow{
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,1));
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    align-items: flex-end;
+    transition: background 1s ease-in-out;
+}
+/* holds background image for game search results */
+.imgContainer{
+    margin: 0 auto;
+    box-shadow: 5px 5px 8px rgba(0,0,0,.7);
+    border: 2px solid rgb(16, 16, 16);
+    border-radius: 15px;
+    width: 300px;
+    height: 400px;
+    background-position: 50% 100%;
+    background-size: cover;
+}
+.gameTitle{
+    color: white;
+    font-size: 26px;
+    text-shadow: 2px 2px 2px rgb(0,0,0);
+    padding: 30px 10px;   
+}
+.imgProfile{
+    width: 100%;
+    height: 800px;
+    margin-top: -200px;
+    box-shadow: 0px -7px 10px rgba(0,0,0,.5);
+    border: 2px 0 solid rgb(16, 16, 16);
+    background-position: 50% 40%;
+    background-size: cover;
+}
+.overProfile{
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7));
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* text-align: center; */
+    align-items: center;
+}
+.listOfGames{
+    margin-top: -200px;
+    color: white;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+    width: 80%;
+    
+}
+.updateCard{
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 0 ;
+    gap: 20px;
+    width: 30%;
+}
+.gameLink{
+    color: white;
 }
 
 
 
+/* ==========================================
+----------------STYLES--------------------
+========================================== */
+.header{
+    margin-bottom: 100px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+    background: linear-gradient(#1A1423 10%, #1A1423 95%, #666B6A 100%);
+    box-shadow: 0 5px 10px RGB(0,255,171); 
+}
+.headerText{
+    line-height: 36px;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.parText{
+    text-indent: 10%;
+    line-height: 33px;
+    font-size: 22px;
+    text-decoration: none;
+}
+.lightGreen{
+    color: #00FFAB;
+}
+.darkText{
+    color: #1A1423;
+}
+.loginButton{
+    padding: 20px 60px;
+    background: linear-gradient(#1C2F40, #00171F);
+    text-shadow: 3px 3px 3px black;
+    border-radius: 25px;
+}
+.loginSection{
+    justify-content: center;
+    padding: 5px;
+    border-radius: 25px;
+    width: 100%;
+    /* margin: 30px auto; */
+    background: linear-gradient(#00FFAB,rgb(46, 46, 46));  
+}
+.simpleBtn{
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 18px;
+    border-radius: 25px;
+    background:#1C2F40;
+    border: 3px solid #00FFAB;
+    padding: 10px 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+.footerLink{
+    color: #00FFAB;
+    font-size: 18px;
+    text-decoration: none;
+}
+.searchForm{
+    text-align: center;
+    margin-bottom: 80px;
+    margin-top: -200px;
+}
 
+.barInput{
+    width: 40%;
+    padding-left: 10px;
+    border-radius: 25px;
+    box-shadow: inset 4px 4px 4px rgba(0,0,0,.5);
+    border: 3px solid #00FFAB;
+}
+.barInput:focus{
+    color: #1A1423;
+    outline: none;
+    box-shadow: 0 0 5px #00FFAB;
+}
 
+.darkShadow{
+    text-shadow: 3px 3px 3px #1A1423;
+}
+.logoutContainer{
+    justify-content: flex-end;
+}
+.userOptions{
+    text-align: center;
+    padding: 40px;
+    border: 3px solid #F5E6E8;
+    width: 140px;
+    gap: 30px;
+    background: rgba(102, 107, 106,.6);
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 25px;
+    transform-origin: top right;
+    transform: translateY(-145px) translateX(-30px) scale(0);
+    transition: transform .3s ease-in-out;
+}
+.gameProfile{
+    color: white;
+    text-shadow: 4px 4px 4px rgba(0,0,0,.6);
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.titleContainer{
+    text-align: center;
+    transform: translateY(-245px);
 
+}
+.gameHeader{
+    color: white;
+    text-shadow: 4px 4px 4px rgba(0,0,0,.6);
+    font-weight: 700;
+    font-size: 40px;
+}
+.deleteBtn{
+    border: 3px solid rgb(123, 1, 1);
+    background: rgb(152, 24, 24);
+    color: white;
+    margin-top: 15px;
+    
+}
+/* ==========================================
+----------------STATES--------------------
+========================================== */
+/* User Icon Animation Class */
+.slideLeft{
+    transform:translateX(-200px);
+    z-index: 1;
+    transition: transform .5s ease-in-out;
+}
 
+/* Logout Container Animation Class */
+.popUp{
+    transform: translateY(-145px) translateX(-30px) scale(1);
+    transform-origin: top right;
+    transition: transform .5s ease-in-out;
+}
+
+/* Floating Logo on Landing Page */
+.floating { 
+    animation-name: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+    0% { transform: translate(0,  0px); 
+        filter: drop-shadow(30px 30px 10px #1A1423);
+        transform: scale(1.03);}
+    50%  { transform: translate(0, 15px); 
+        filter: drop-shadow(15px 15px 1px #1A1423);;}
+    100%   { transform: translate(0, -0px);
+        filter: drop-shadow(30px 30px 10px #1A1423);
+        transform: scale(1.03); }   
+}
+
+.loginButton:hover{
+    box-shadow: inset 0px -10px 20px rgba(0,0,0,.5);
+}
+.simpleBtn:hover{
+    background: #00FFAB;
+    color: #1A1423;
+}
+.navLink:hover{
+    color: #00B5FF;
+}
+.userAvatar:hover{
+    box-shadow: 0px 0px 3px 3px #00FFAB;
+}
+.hidden{
+    transform: scale(0);
+}
+/* search results shadow gets lighter on hover */
+.overShadow:hover{
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.6));
+    transition: background .1s ease-in-out;
+}
+/* makes game search result larger on hover */
+.imgContainer:hover{
+    transform: scale(1.05);
+    transition: transform .1s ease-in-out;
+}

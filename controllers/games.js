@@ -6,8 +6,7 @@ require('dotenv').config({path: '../config/.env'})
 module.exports = {
     searchGames: async(req,res) =>{
         try{
-            const name = req.query.gameName
-            const response = await axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWGAPIKEY}&search=${name}&search_precise=true`)
+            const response = await axios.get(`https://api.rawg.io/api/games?key=${process.env.RAWGAPIKEY}&search=${req.query.gameName}&search_precise=true`)
             // console.log(response)
             const data = await response.data.results; 
             const filteredGames = await data.filter(e => e.rating >= 3)
@@ -19,8 +18,7 @@ module.exports = {
     }, 
     getGameProfile: async(req,res) =>{
         try{
-            const name = req.params.gameName
-            const response = await axios.get(`https://api.rawg.io/api/games/${name}?key=${process.env.RAWGAPIKEY}`)
+            const response = await axios.get(`https://api.rawg.io/api/games/${req.params.gameName}?key=${process.env.RAWGAPIKEY}`)
             const data = await response.data
             res.render('game_profile.ejs', {game: data, name: req.user.username, id: req.user.discordID, avatar: req.user.avatar})
         }
@@ -42,8 +40,7 @@ module.exports = {
     },
     getGameFriendList: async(req,res) =>{
         try{
-            const name = req.params.gameName
-            const response = await axios.get(`https://api.rawg.io/api/games/${name}?key=${process.env.RAWGAPIKEY}`)
+            const response = await axios.get(`https://api.rawg.io/api/games/${req.params.gameName}?key=${process.env.RAWGAPIKEY}`)
             const filteredGames = await response.data
             const userGame = await Game.findOne({slug: response.data.slug, userId: req.user._id})
             const game = await Game.find({slug: response.data.slug, hours: {$gte : (.8 * userGame.hours), $lte: (1.2 * userGame.hours) }})
