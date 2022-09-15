@@ -4,46 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/mod-styles.css">
+    <title>PlayerToo</title>
 </head>
 <body>
     <header class="header">
-        <nav class="flex">
+        <nav class="flex navBase">
             <ul class="flex navList">
-                <li class="navItem"><a href="/user/profile">My Games</a></li>
-                <li class="navItem"><a href="/games/search">Search</a></li>                    
+                <li class="navItem headerText"><a class="navLink headerText lightGreen" href="/user/profile">My Games</a></li>
+                <li class="navItem headerText"><a class='navLink headerText lightGreen' href="/games/search">Search</a></li>                    
             </ul>
-            <img id="userIcon" class="userNav userAvatar" src="https://cdn.discordapp.com/avatars/<%=id%>/<%=avatar%>.png">
+            <img id="userIcon" class="userAvatar" src="https://cdn.discordapp.com/avatars/<%=id%>/<%=avatar%>.png">
         </nav>        
     </header>
-    <div class=" logoutContainer">
-        <div class="spacingDiv"></div>
-        <section id="menuSection" class="hidden menuShow">
-            <span id="menuName" class="menuName"><%=name%></span>
-            <button id="menuBtn" type="button" class="logoutBtn">Logout</button>
+    <div class="flex logoutContainer">
+        <section id="menuSection" class="userOptions flex">
+            <span id="menuName" class="headerText darkShadow lightGreen"><%=name%></span>
+            <button id="logoutBtn" type="button" class="simpleBtn lightGreen">Logout</button>
         </section>
     </div>
+    <section class="titleContainer">
+        <h1 class="center gameHeader"><%=game.name%></h1>
+    </section> 
     <section class="main">
-        <section class="gameMain">
-            <h1><%= game.name %></h1>
-            <img class="gameImg" src="<%= game.background_image %>" alt="">  
-            <section class="addFriend">
-                <h3>Find your PlayerToo:</h3>
-                <ul class="users">
-                <%users.forEach(e => { %>
-                    <li class="matchedResults">
-                        <span><%=e%></span>
-                    </li>
-                <%})%>
-                </ul>
-            </section>
-        </section>
-        <section class="gameDescriptionContainer">
-            <p class="gameDescription"><%=game.description_raw%></p>
-        </section>
-        
+        <div class="imgProfile" style="background-image:url('<%= game.background_image %>')">
+            <div class="overProfile flex">
+                <section class="gameProfile">
+                    <section class="main">
+                        <section class="gameMain">  
+                            <section class="addFriend">
+                                <h3 class="headerText">Find your PlayerToo:</h3>
+                                <ul class="headerText users">
+                                <%users.forEach(e => { %>
+                                    <li class="matchedResults">
+                                        <span><%=e%></span>
+                                    </li>
+                                <%})%>
+                                </ul>
+                            </section>
+                        </section>
+                    </section>
+                </section> 
+            </div>
+        </div>
     </section>
+    
     
     
     

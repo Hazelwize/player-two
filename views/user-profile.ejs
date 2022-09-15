@@ -4,43 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400;700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/mod-styles.css">
     <title>PlayerToo</title>
 </head>
 <body>
     <header class="header">
-        <nav class="flex">
+        <nav class="flex navBase">
             <ul class="flex navList">
-                <li class="navItem"><a href="/user/profile">My Games</a></li>
-                <li class="navItem"><a href="/games/search">Search</a></li>                    
+                <li class="navItem headerText"><a class="navLink headerText lightGreen" href="/user/profile">My Games</a></li>
+                <li class="navItem headerText"><a class='navLink headerText lightGreen' href="/games/search">Search</a></li>                    
             </ul>
-            
-            <img id="userIcon" class="userNav userAvatar" src="https://cdn.discordapp.com/avatars/<%=id%>/<%=avatar%>.png">
-        </nav>
-
+            <img id="userIcon" class="userAvatar" src="https://cdn.discordapp.com/avatars/<%=id%>/<%=avatar%>.png">
+        </nav>        
     </header>
-    <div class=" logoutContainer">
-        <div class="spacingDiv"></div>
-        <section id="menuSection" class="hidden menuShow">
-            <span id="menuName" class=""><%=name%></span>
-            <button id="menuBtn" type="button" class="logoutBtn">Logout</button>
+    <div class="flex logoutContainer">
+        <section id="menuSection" class="userOptions flex">
+            <span id="menuName" class="headerText darkShadow lightGreen"><%=name%></span>
+            <form action="/user/logout" method="POST">
+                <button id="logoutBtn" type="submit" class="simpleBtn lightGreen">Logout</button>
+            </form>
+            
         </section>
     </div>
-    
-    <ul class="flex listOfGames">
-        <% games.forEach( e => { %>
-            <li data-name="<%=e.gameName%>" class="flex gameUpdateCard">
-                <a class="titleLink" href="/games/profile/<%=e.gameName%>"><span class=""><%= e.gameName %></span></a> 
-                <form data-name="<%=e.gameName%>" class="hoursUpdateForm">
-                    <input placeholder="<%=e.hoursPlayed%>"class='hoursInput'>
-                    <button type="button" class="updateBtn">Update Hours</button>
-                </form>
-                <span class="deleteSpan">Remove game from "My Games": <span class="deleteBtn">Delete</span></span>
-            </li>
-        <%})%>
-    </ul>
+    <section>
+        <ul class="flex center listOfGames">
+            <% games.forEach( e => { %>
+                <li data-name="<%=e.name%>" class="updateCard flex headerText">
+                    <a class="headerText gameLink" href="/games/profile/<%=e.name%>"><span class="headerText"><%= e.name %></span></a> 
+                    <form action="/user/updateHours/<%=e._id%>?_method=PUT" method="POST">
+                        <input name="hours"placeholder="<%=e.hours%>"class='headerText darkText barInput'>
+                        <button type="submit" class="hoursInput barBtn simpleBtn lightGreen">Update Hours</button>
+                    </form>
+                    <span class="deleteSpan">Remove game from "My Games": 
+                        <form action="/user/delete-game/<%=e._id%>?_method=DELETE" method="POST">
+                            <button class="simpleBtn deleteBtn" type="submit">Delete</button>    
+                        </form>
+                    </span>
+                </li>
+            <%})%>
+        </ul>
+    </section>
     <script src="/js/main.js"></script>
 </body>
 </html>
