@@ -1,20 +1,20 @@
 const User = require("../models/User")
+const Game = require("../models/Game")
 
 module.exports = {
     getIndex : (req,res)=>{
         res.render('index.ejs')
     },
-    getProfile: (req,res) =>{
-        res.render('user-profile.ejs',{games: req.user.games, name: req.user.username, id: req.user.discordID, avatar: req.user.avatar})
+    getProfile: async (req,res) =>{
+        const games = await Game.find({userId: req.user._id})
+        console.log(games)
+        res.render('user-profile.ejs',{games: games, name: req.user.username, id: req.user.discordID, avatar: req.user.avatar})
     },
     updateGameHours: async(req,res) =>{
         try{
-            const gameName = req.body.gameToUpdate
-            const hours = req.body.updatedHours
-            console.log(gameName, hours)
-            await User.updateOne({_id: req.user._id, 'games.gameName': gameName}, {$set:{'games.$.hoursPlayed': hours}})
-            console.log(hours, gameName)
-            res.json('hours updated')
+            console.log(req.body.hours)
+            await Game.updateOne({_id: req.params.game},{hours: req.body.hours})
+            res.redirect('/user/profile')
         }
         catch(err){
             console.log(err)
@@ -23,12 +23,9 @@ module.exports = {
     },
     deleteGame: async(req,res) =>{
         try{
-            const gameToDelete = req.body.gameToDelete
-            const doc = await User.findOne({_id: req.user._id})
-            doc.games = doc.games.filter(e => e.gameName !== gameToDelete)
-            await doc.save()
-            console.log(gameToDelete)
-            res.json('game deleted')
+            await Game.deleteOne({_id:req.params.game})
+            console.log(req.params.game)
+            res.redirect('/user/profile')
         }
         catch(err){
             console.log(err)

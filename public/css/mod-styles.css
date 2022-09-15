@@ -197,6 +197,26 @@ body{
     /* text-align: center; */
     align-items: center;
 }
+.listOfGames{
+    margin-top: -200px;
+    color: white;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+    width: 80%;
+    
+}
+.updateCard{
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 0 ;
+    gap: 20px;
+    width: 30%;
+}
+.gameLink{
+    color: white;
+}
+
 
 
 /* ==========================================
@@ -317,6 +337,13 @@ body{
     text-shadow: 4px 4px 4px rgba(0,0,0,.6);
     font-weight: 700;
     font-size: 40px;
+}
+.deleteBtn{
+    border: 3px solid rgb(123, 1, 1);
+    background: rgb(152, 24, 24);
+    color: white;
+    margin-top: 15px;
+    
 }
 /* ==========================================
 ----------------STATES--------------------
