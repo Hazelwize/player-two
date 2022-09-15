@@ -29,13 +29,13 @@
     <section>
         <ul class="flex center listOfGames">
             <% games.forEach( e => { %>
-                <li data-name="<%=e.name%>" class="updateCard flex headerText">
-                    <a class="headerText gameLink" href="/games/profile/<%=e.name%>"><span class="headerText"><%= e.name %></span></a> 
+                <li class="updateCard flex headerText">
+                    <a class="headerText gameLink" href="/games/profile/<%=e.slug%>"><span class="headerText"><%= e.name %></span></a> 
                     <form action="/user/updateHours/<%=e._id%>?_method=PUT" method="POST">
                         <input name="hours"placeholder="<%=e.hours%>"class='headerText darkText barInput'>
                         <button type="submit" class="hoursInput barBtn simpleBtn lightGreen">Update Hours</button>
                     </form>
-                    <span class="deleteSpan">Remove game from "My Games": 
+                    <span class="deleteSpan">Remove <%=e.name%> from "My Games": 
                         <form action="/user/delete-game/<%=e._id%>?_method=DELETE" method="POST">
                             <button class="simpleBtn deleteBtn" type="submit">Delete</button>    
                         </form>

@@ -5,6 +5,10 @@ const GameSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    slug:{
+        type: String,
+        required: true,
+    },
     hours: {
         type: Number,
         required: true,
@@ -16,7 +20,11 @@ const GameSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
-    }
+    },
+    role: {
+        type: String,
+        required: false,
+    },
 })
 
 module.exports = mongoose.model('Game', GameSchema)

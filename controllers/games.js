@@ -30,7 +30,7 @@ module.exports = {
     },
     addGame: async(req,res) => {
         const hoursPlayed = +req.body.hoursPlayed
-        const gameToAdd = { name:req.body.slug, hours:hoursPlayed, userId: req.user._id, username: req.user.username}
+        const gameToAdd = { name:req.body.name, slug: req.body.slug, hours:hoursPlayed, userId: req.user._id, username: req.user.username, role: req.body.role}
         try{
             await Game.create(gameToAdd)
             console.log('added game')
@@ -45,8 +45,8 @@ module.exports = {
             const name = req.params.gameName
             const response = await axios.get(`https://api.rawg.io/api/games/${name}?key=${process.env.RAWGAPIKEY}`)
             const filteredGames = await response.data
-            const userGame = await Game.findOne({name: response.data.slug, userId: req.user._id})
-            const game = await Game.find({name: response.data.slug, hours: {$gte : (.8 * userGame.hours), $lte: (1.2 * userGame.hours) }})
+            const userGame = await Game.findOne({slug: response.data.slug, userId: req.user._id})
+            const game = await Game.find({slug: response.data.slug, hours: {$gte : (.8 * userGame.hours), $lte: (1.2 * userGame.hours) }})
             const filteredUsers = game.map(el => el.username)
             res.render('game_friends.ejs', {game: filteredGames, users: filteredUsers, name: req.user.username, id: req.user.discordID, avatar: req.user.avatar})
         }

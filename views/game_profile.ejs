@@ -34,6 +34,7 @@
                     <h2 class="headerText">How many hours have you played <%=game.name%>:</h2>
                     <form class="hoursForm center" action="/games/addGame" method="POST">
                         <input class="barInput headerText darkText" type="text" placeholder="200" name="hoursPlayed">
+                        <input type="hidden" name="name" value="<%=game.name%>">
                         <input type="hidden" name="slug" value="<%=game.slug%>">
                         <button class="hoursInput barBtn simpleBtn lightGreen"type="submit">Add Game</button>
                     </form>
