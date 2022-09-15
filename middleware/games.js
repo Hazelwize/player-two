@@ -11,7 +11,7 @@ module.exports = {
     },
     checkHasGame: async (req,res,next) =>{
         try{
-            let hasGame = await Game.findOne({name: req.params.gameName, userId: req.user._id})
+            let hasGame = await Game.findOne({slug: req.params.gameName, userId: req.user._id})
             console.log(hasGame)
             if(hasGame){
                 res.redirect(`/games/profile/added/${req.params.gameName}`)
