@@ -23,18 +23,19 @@
             <button id="logoutBtn" type="button" class="simpleBtn lightGreen">Logout</button>
         </section>
     </div>
+    <section class="titleContainer">
+        <h1 class="center gameHeader"><%=game.name%></h1>
+    </section> 
     <section class="main">
         <div class="imgProfile" style="background-image:url('<%= game.background_image %>')">
             <div class="overProfile flex">
-                <span class="headingProfile" data-id="<%=game.id%>"><%= game.name %></span>
                 <section class="gameProfile">
-                    <h2 class="parText">Join the list to find friends! </h2>
+                    <h2 data-id="<%=game.id%>" class="headerText">Join the list to find friends!</h2>
+                    <h2 class="headerText">How many hours have you played <%=game.name%>:</h2>
                     <form class="hoursForm center" action="/games/addGame" method="POST">
-                        <label class="headerText">Hours Played:
-                            <input class="hoursBar" type="text" name="hoursPlayed">
-                        </label>
+                        <input class="barInput headerText darkText" type="text" placeholder="200" name="hoursPlayed">
                         <input type="hidden" name="slug" value="<%=game.slug%>">
-                        <button class="hoursBtn simpleBtn lightGreen"type="submit">Add Game</button>
+                        <button class="hoursInput barBtn simpleBtn lightGreen"type="submit">Add Game</button>
                     </form>
                 </section> 
             </div>

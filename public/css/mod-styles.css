@@ -194,7 +194,7 @@ body{
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    /* text-align: center; */
     align-items: center;
 }
 
@@ -267,6 +267,7 @@ body{
 
 .barInput{
     width: 40%;
+    padding-left: 10px;
     border-radius: 25px;
     box-shadow: inset 4px 4px 4px rgba(0,0,0,.5);
     border: 3px solid #00FFAB;
@@ -297,7 +298,26 @@ body{
     transform: translateY(-145px) translateX(-30px) scale(0);
     transition: transform .3s ease-in-out;
 }
+.gameProfile{
+    color: white;
+    text-shadow: 4px 4px 4px rgba(0,0,0,.6);
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.titleContainer{
+    text-align: center;
+    transform: translateY(-245px);
 
+}
+.gameHeader{
+    color: white;
+    text-shadow: 4px 4px 4px rgba(0,0,0,.6);
+    font-weight: 700;
+    font-size: 40px;
+}
 /* ==========================================
 ----------------STATES--------------------
 ========================================== */
