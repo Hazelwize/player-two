@@ -163,7 +163,7 @@ body{
     width: 90%;
 }
 .underline{
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid #00FFAB;
 }
 
 /* shadow over game search result cards */
@@ -319,8 +319,9 @@ svg{
 
 .barInput{
     z-index: 1;
-    min-width: 100%;
+    min-width: 90%;
     border-radius: 25px; 
+    padding-left: 20px;
     box-shadow: inset 4px 4px 4px rgba(0,0,0,.5);
     border: 3px solid #00FFAB;
 }
@@ -523,6 +524,10 @@ svg{
         transform-origin: top right;
         transition: transform .5s ease-in-out;
     }
+    .gameHeader{
+        font-size: 26px;
+    }
+   
 }
 @media screen and (max-width: 680px){
     .gameCard{
