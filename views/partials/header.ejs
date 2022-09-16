@@ -12,15 +12,15 @@
     <header class="header">
         <nav class="flex navBase">
             <ul class="flex navList">
-                <li class="navItem headerText"><a class="navLink headerText lightGreen" href="/user/profile">My Games</a></li>
-                <li class="navItem headerText"><a class='navLink headerText lightGreen' href="/games/search">Search</a></li>                    
+                <li class=""><a class='navLink' href="/games/search"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30"><path d="M32.958 35.708 22 24.792q-1.208.958-2.854 1.52-1.646.563-3.521.563-4.708 0-7.979-3.271t-3.271-7.896q0-4.666 3.271-7.916t7.937-3.25q4.667 0 7.917 3.25t3.25 7.916q0 1.834-.542 3.459-.541 1.625-1.583 2.958l11 10.958Zm-17.375-12.5q3.125 0 5.292-2.187 2.167-2.188 2.167-5.313 0-3.125-2.167-5.312-2.167-2.188-5.292-2.188t-5.312 2.188q-2.188 2.187-2.188 5.312 0 3.125 2.188 5.313 2.187 2.187 5.312 2.187Z"/></svg></a></li>                    
             </ul>
             <img id="userIcon" class="userAvatar" src="https://cdn.discordapp.com/avatars/<%=id%>/<%=avatar%>.png">
         </nav>        
     </header>
     <div class="flex logoutContainer">
         <section id="menuSection" class="userOptions flex">
-            <span id="menuName" class="headerText darkShadow lightGreen"><%=name%></span>
+            <span id="menuName" class="headerText underline darkShadow lightGreen"><%=name%></span>
+            <span class="headerText"><a class="navLink headerText darkShadow lightGreen" href="/user/profile">My Games</a></span>
             <form action="/user/logout" method="POST">
                 <button id="logoutBtn" type="submit" class="simpleBtn lightGreen">Logout</button>
             </form>

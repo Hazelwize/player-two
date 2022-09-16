@@ -5,14 +5,17 @@
     <section class="main">
         <div class="imgProfile" style="background-image:url('<%= game.background_image %>')">
             <div class="overProfile flex">
-                <section class="gameProfile">
+                <section class="gameProfile center">
                     <h2 data-id="<%=game.id%>" class="headerText">Join the list to find friends!</h2>
                     <h2 class="headerText">How many hours have you played <%=game.name%>:</h2>
                     <form class="hoursForm center" action="/games/addGame" method="POST">
-                        <input class="barInput headerText darkText" type="text" placeholder="200" name="hoursPlayed">
-                        <input type="hidden" name="name" value="<%=game.name%>">
-                        <input type="hidden" name="slug" value="<%=game.slug%>">
-                        <button class="hoursInput barBtn simpleBtn lightGreen"type="submit">Add Game</button>
+                        <div class="flex searchBar">
+                            <input class="barInput headerText darkText" type="text" placeholder="200" name="hoursPlayed">
+                            <input type="hidden" name="name" value="<%=game.name%>">
+                            <input type="hidden" name="slug" value="<%=game.slug%>">
+                            <button class="barBtn simpleBtn lightGreen"type="submit">Submit</button>
+                        </div>
+                        
                     </form>
                 </section> 
             </div>

@@ -5,10 +5,13 @@
                 <li class="updateCard flex headerText">
                     <a class="headerText gameLink" href="/games/profile/<%=e.slug%>"><span class="headerText"><%= e.name %></span></a> 
                     <form action="/user/updateHours/<%=e._id%>?_method=PUT" method="POST">
-                        <input name="hours"placeholder="<%=e.hours%>"class='headerText darkText barInput'>
-                        <button type="submit" class="hoursInput barBtn simpleBtn lightGreen">Update Hours</button>
+                        <legend class="headerText">Update Hours:</legend>
+                        <div class="flex updateForm searchBar">
+                            <input name="hours"placeholder="<%=e.hours%>"class='headerText darkText barInput'>
+                            <button type="submit" class="barBtn simpleBtn lightGreen">Submit</button>
+                        </div>
                     </form>
-                    <span class="deleteSpan">Remove <%=e.name%> from "My Games": 
+                    <span class="deleteSpan headerText">Remove <%=e.name%>: 
                         <form action="/user/delete-game/<%=e._id%>?_method=DELETE" method="POST">
                             <button class="simpleBtn deleteBtn" type="submit">Delete</button>    
                         </form>

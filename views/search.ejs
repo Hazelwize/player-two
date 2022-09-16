@@ -1,8 +1,11 @@
 <%- include('partials/header') -%>
     <form class="searchForm center"action="/games/search" method="GET">
         <legend class="headerText darkShadow lightGreen">Search games. Find friends!</legend>
-        <input class="barInput headerText darkText" type="text" name="gameName">
-        <button class="barBtn simpleBtn lightGreen"type="submit">Search</button>
+        <div class="flex center searchBar">
+            <input class="barInput headerText darkText" type="text" name="gameName">
+            <button class="barBtn simpleBtn lightGreen"type="submit">Search</button>
+        </div>
+        
     </form>
     <ul class="flex games">
         <% for(let i = 0; i < games.length ; i++) { %>
