@@ -1,6 +1,5 @@
 const express = require('express')
 const passport = require('passport')
-const config = require('../config/config')
 const {checkAuth} = require('../middleware/auth')
 const router = express.Router()
 
