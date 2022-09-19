@@ -2,7 +2,7 @@
 
 PlayerToo is a social platform for finding other people interested in the same multiplayer video games. 
 
-**Link to project:** This Site is not live yet
+**Link to project:** https://playertoo.onrender.com
 
 
 ![PlayerToo-Logo](https://user-images.githubusercontent.com/97214996/180891251-d5d67224-eaf0-40f1-8339-33a1a8e4e74d.png)
