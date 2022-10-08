@@ -11,9 +11,9 @@
                             <section class="addFriend">
                                 <h3 class="headerText">Find your PlayerToo:</h3>
                                 <ul class="headerText users">
-                                <%users.forEach(e => { %>
+                                <%friend.forEach(friend => { %>
                                     <li class="matchedResults">
-                                        <span><%=e%></span>
+                                        <a class="noLink" href="/user/friend-profile/<%=friend.friendId%>"><span><%=friend.username%></span></a>
                                     </li>
                                 <%})%>
                                 </ul>

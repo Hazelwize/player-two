@@ -211,7 +211,7 @@ body{
     align-items: center;
 }
 .listOfGames{
-    margin-top: -200px;
+    /* margin-top: -200px; */
     color: white;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -248,9 +248,63 @@ legend{
 svg{
     fill:rgba(0, 255, 171,.8);
 }
-
-
-
+.friendContainer{
+    text-align: center; 
+    transform: translateY(-200px);
+}
+.gamesHeader{
+    padding: 0 0 20px 0  ;
+}
+.codesContainer{
+    flex-direction: column;
+    gap: 30px;
+}
+.friendGames{
+    justify-content: space-between;
+    flex-direction: column;
+    border: 3px solid #00FFAB;
+    border-radius: 30px;
+}
+.friendPic{
+    border-radius: 50%;
+}
+.gameSystem{
+    background: #00FFAB;
+    color: #1A1423;
+    border-radius: 25px 25px 0 0 ;
+    /* border-bottom: 3px solid #00FFAB; */
+}
+.codesForm{
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    width: 80%;
+}
+.stackedInput{
+    margin: 10px 0;
+    width: 100%;
+}
+.codesCard{
+    transform: translateY(-200px);
+}
+.codeSubmit{
+    display: block;
+    width: 130px;
+    transform: translateX(120px) translateY(10px);
+}
+.codeLabel{
+    width: 100%;
+}
+.settingsTitle{
+    width: 60%;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 100px;
+    border-bottom: 4px solid #00FFAB;
+}
+.noLink{
+    text-decoration: none;
+    color: #00FFAB;
+}
 /* ==========================================
 ----------------STYLES--------------------
 ========================================== */
@@ -413,6 +467,9 @@ svg{
         filter: drop-shadow(30px 30px 10px #1A1423);
         transform: scale(1.03); }   
 }
+.matchedResults:hover{
+    transform: scale(1.1);
+}
 
 .loginButton:hover{
     box-shadow: inset 0px -10px 20px rgba(0,0,0,.5);
@@ -530,6 +587,9 @@ svg{
     .gameHeader{
         font-size: 26px;
     }
+    .settingsTitle{
+        width: 80%;
+    }
    
 }
 @media screen and (max-width: 680px){
@@ -558,10 +618,20 @@ svg{
         margin: 0;
         width: 80%;
     }
+    .stackedInput{
+        font-size: 16px;
+    }
+    .codeSubmit{
+        transform: none;
+        width: 130px;
+    }
     .updateForm{
         height: auto;
     }
     .updateCard{
-        width: 98%;
+        padding: 30px;
+    }
+    .settingsTitle{
+        font-size: 25px;
     }
 }
