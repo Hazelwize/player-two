@@ -263,15 +263,16 @@ svg{
     justify-content: space-between;
     flex-direction: column;
     border: 3px solid #00FFAB;
+    background: #00FFAB;
     border-radius: 30px;
 }
 .friendPic{
     border-radius: 50%;
 }
 .gameSystem{
-    background: #00FFAB;
-    color: #1A1423;
-    border-radius: 25px 25px 0 0 ;
+    background: #1A1423;
+    color: #00FFAB;
+    border-radius: 0 0 27px 27px ;
     /* border-bottom: 3px solid #00FFAB; */
 }
 .codesForm{
@@ -304,6 +305,9 @@ svg{
 .noLink{
     text-decoration: none;
     color: #00FFAB;
+}
+.bigName{
+    margin-bottom: 20px;
 }
 /* ==========================================
 ----------------STYLES--------------------
