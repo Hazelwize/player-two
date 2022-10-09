@@ -45,7 +45,11 @@ module.exports = {
             const userGame = await Game.findOne({slug: response.data.slug, userId: req.user._id})
             const game = await Game.find({slug: response.data.slug, hours: {$gte : (.8 * userGame.hours), $lte: (1.2 * userGame.hours) }})
             const filteredUsers = game.map(el => el.username)
-            res.render('game_friends.ejs', {game: filteredGames, users: filteredUsers, name: req.user.username, id: req.user.discordID, avatar: req.user.avatar})
+            const friend = game.map(el =>{
+                return {username: el.username,
+                friendId: el.userId}
+            })
+            res.render('game_friends.ejs', {game: filteredGames, users: filteredUsers,friend: friend, name: req.user.username, id: req.user.discordID, avatar: req.user.avatar})
         }
         catch(err){
             console.log(err)

@@ -1,0 +1,65 @@
+<%- include('partials/header') -%>
+    <section class="center friendContainer">
+        <section>
+            <img class="friendPic"  src="https://cdn.discordapp.com/avatars/<%=friend.discordID%>/<%=friend.avatar%>.png">
+            <h1 class="headerText lightGreen"><%=friend.username%></h1>
+            <section class="updateCard center">
+                <h2 class="headerText">Friend Codes:</h2>
+                <ul class="flex codesContainer">
+                    <li class="flex friendGames headerText lightGreen">
+                        <span class="gameSystem">Nintendo Switch</span>
+                        <span><%if(codes === null){%>
+                            <%= 'n/a' %>
+                            <%}else{%>
+                            <%=codes.nintendo ? codes.nintendo : 'n/a'%>
+                            <%}%> </span>
+                    </li>
+                    <li class="flex friendGames headerText lightGreen">
+                        <span class="gameSystem">PlayStation</span>
+                        <span><%if(codes === null){%>
+                            <%= 'n/a' %>
+                            <%}else{%>
+                            <%=codes.playstation ? codes.playstation : 'n/a'%>
+                            <%}%> </span>
+                    </li>
+                    <li class="flex friendGames headerText lightGreen">
+                        <span class="gameSystem">Xbox</span>
+                        <span><%if(codes === null){%>
+                            <%= 'n/a' %>
+                            <%}else{%>
+                            <%=codes.xbox ? codes.xbox : 'n/a'%>
+                            <%}%> </span>
+                    </li>
+                    <li class="flex friendGames headerText lightGreen">
+                        <span class="gameSystem">Steam</span>
+                        <span><%if(codes === null){%>
+                            <%= 'n/a' %>
+                            <%}else{%>
+                            <%=codes.steam ? codes.steam : 'n/a'%>
+                            <%}%></span>
+                    </li>
+                    
+                </ul>
+            </section>
+        </section>
+        <section class="updateCard center">
+            <h2 class="gamesHeader headerText">Games that <%=friend.username.split('#')[0]%> enjoys:</h2>
+            <ul class="flex codesContainer">
+                <%games.forEach(game => { %>
+                    <li class="flex friendGames headerText lightGreen">
+                        <span class="gameSystem"><%=game.name%></span>
+                        
+                        <span><%=game.hours%> hours</span>
+                    </li>
+                <%})%>
+            </ul>
+        </section>
+        
+    </section>
+
+    <!-- friend: profile, games: userGames -->
+
+<%- include('partials/footer') -%>  
+    <script src="/js/main.js"></script>
+</body>
+</html>

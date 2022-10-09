@@ -1,4 +1,48 @@
 <%- include('partials/header') -%>
+    <section class="codesCard updateCard center">
+        <form action="/user/updateCodes/?_method=PUT" method="POST">
+            <legend class="headerText">Update Friend Codes:</legend>
+            <div class="flex codesForm updateForm searchBar">
+                <label class="codeLabel">Nintendo
+                    <input value="<%if(codes === null){%>
+<%= '' %>
+<%}else{%>
+<%=codes.nintendo%>
+<%}%>" 
+                    name="nintendo" placeholder="Nintendo Code" class='stackedInput headerText darkText barInput'>
+                </label>
+                <label class="codeLabel">Playstation
+                    <input value="<%if(codes === null){%>
+<%= '' %>
+<%}else{%>
+<%=codes.playstation%>
+<%}%>" 
+                    name="playstation" placeholder="Playstation Code" class='stackedInput headerText darkText barInput'>
+                </label>
+                <label class="codeLabel">Xbox
+                    <input value="<%if(codes === null){%>
+<%= '' %>
+<%}else{%>
+<%=codes.xbox%>
+<%}%>" 
+                    name="xbox" placeholder="Xbox Code" class='stackedInput headerText darkText barInput'>
+                </label>
+                <label class="codeLabel">Steam
+                    <input value="<%if(codes === null){%>
+<%= '' %>
+<%}else{%>
+<%=codes.steam%>
+<%}%>" 
+                    name="steam" placeholder="Steam Code" class='stackedInput headerText darkText barInput'>  
+                </label> 
+
+                <button type="submit" class="codeSubmit barBtn simpleBtn lightGreen">Submit</button>
+            </div>
+        </form>
+    </section>
+    <section class="settingsTitle center">
+        <h2 class="lightGreen">Change Game Hours</h2>
+    </section>
     <section>
         <ul class="flex center listOfGames">
             <% games.forEach( e => { %>
